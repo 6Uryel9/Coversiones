@@ -1,5 +1,0 @@
-mkdir 6Uryel9
-touch 6Uryel9/.gitkeep     
-git add 6Uryel9/.gitkeep
-git commit -m "Add 6Uryel9"
-git push
