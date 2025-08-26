@@ -8,13 +8,17 @@ La calculadora contará con módulos temáticos que permitirán realizar diversa
 •	Módulo 1: Numérico avanzado
 o	Decimal a binario/Octal/Hexadecimal
 o	Decimal a números romanos
+
 •	Módulo 2: Físico/Científico
 o	Longitud: metros/kilómetros/millas/años luz
 o	Temperatura: °C/K/°F/Rankine
+
 •	Módulo 3: Digital/Datos
 o	Byte a Kilobyte/Kilobyte a Megabyte/Megabyte a Gigabyte
 o	Bytes por segundo/Megabyte por segundo
+
 •	 Módulo 4: Curioso/Entretenido
 o	Cocina internacional: gramos/onzas/tazas/cucharadas
 o	Escalas creativas: energía (J)/barras de chocolate/calorías/bombillas
+
 De esta manera, el proyecto busca fomentar la experimentación, el pensamiento lógico, la cultura científica y tecnológica, así como la curiosidad del usuario.
