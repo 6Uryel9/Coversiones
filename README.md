@@ -24,3 +24,9 @@ o	Cocina internacional: gramos/onzas/tazas/cucharadas
 o	Escalas creativas: energía (J)/barras de chocolate/calorías/bombillas
 
 De esta manera, el proyecto busca fomentar la experimentación, el pensamiento lógico, la cultura científica y tecnológica, así como la curiosidad del usuario.
+
+# Referencias
+
+Ziatdinov, R., & Valles Jr., J. R. (2022). Synthesis of modeling, visualization, and programming in GeoGebra as an effective approach for teaching and learning STEM topics. Mathematics, 10(3), 398. https://doi.org/10.3390/math10030398
+
+
