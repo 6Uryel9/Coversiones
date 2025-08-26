@@ -7,6 +7,7 @@ Con base en ello, consideramos que existe la oportunidad de integrar estas compe
 
 # Cómo funciona
 La calculadora contará con módulos temáticos que permitirán realizar diversas conversiones:
+
 •	Módulo 1: Numérico avanzado
 o	Decimal a binario/Octal/Hexadecimal
 o	Decimal a números romanos
