@@ -1,0 +1,50 @@
+# Inicio del programa:
+Se muestra un menú con las opciones de conversión digital disponibles:
+
+- Bytes ↔ Kilobytes
+
+- Kilobytes ↔ Megabytes
+
+- Megabytes ↔ Gigabytes
+
+- bits por segundo ↔ Megabits por segundo
+
+
+#Declaración de variables:
+
+- Una variable para guardar la opción seleccionada por el usuario.
+
+- Una variable para almacenar el valor numérico a convertir.
+
+
+#Funciones a utilizar:
+
+Uso de ciclo while:
+Mientras el usuario no elija la opción de salir, se repite el menú y el programa espera una nueva opción.
+
+Definición de funciones:
+Cada conversión (B ↔ KB, KB ↔ MB, MB ↔ GB, bps ↔ Mbps) se implementa dentro de una función diferente.
+
+Cada función recibe un valor y devuelve el valor convertido aplicando el factor de equivalencia:
+
+- 1 KB = 1024 B
+
+- 1 MB = 1024 KB
+
+- 1 GB = 1024 MB
+
+- 1 Mbps = 1,000,000 bps
+
+#Proceso de selección:
+
+1. El usuario elige una opción del menú.
+
+2. Se solicita el valor a convertir.
+
+3. Se llama a la función correspondiente y se muestra el resultado en pantalla.
+
+#Opción especial (5):
+Si el usuario elige “Mostrar mensaje y regresar”, se imprime un mensaje personalizado (ejemplo: "Regresando al menú principal...") y se vuelve al menú.
+
+#Fin del programa:
+Cuando el usuario decida salir (por ejemplo, introduciendo un valor especial como 0), se muestra un mensaje de despedida y el programa termina.
