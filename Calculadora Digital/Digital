@@ -48,3 +48,13 @@ Si el usuario elige “Mostrar mensaje y regresar”, se imprime un mensaje pers
 
 #Fin del programa:
 Cuando el usuario decida salir (por ejemplo, introduciendo un valor especial como 0), se muestra un mensaje de despedida y el programa termina.
+
+Este proyecto en Python es una calculadora digital de conversiones pensada para trabajar con unidades de almacenamiento y de velocidad de transmisión de datos.
+Su propósito es brindar una herramienta fácil de usar, que permita convertir valores entre Bytes, Kilobytes, Megabytes y Gigabytes, así como entre bits por segundo (bps) y Megabits por segundo (Mbps).
+El funcionamiento es simple: el programa muestra un menú interactivo en el que el usuario elige la conversión que desea realizar. Después, se ingresa el valor numérico y la dirección de la conversión (por ejemplo, de Bytes a Kilobytes o viceversa). 
+El sistema valida que la entrada sea correcta y devuelve el resultado con su unidad correspondiente.
+Para hacerlo más dinámico, cada conversión incluye una animación con flechas que simula el paso de una unidad a otra, dando la sensación de transformación. 
+Además, se implementó una función de pruebas que permite comprobar rápidamente que todas las conversiones funcionan correctamente.
+En esta primera versión se utilizan las equivalencias estándar de conversión (1 KB = 1024 Bytes, 1 MB = 1024 KB, 1 GB = 1024 MB y 1 Mbps = 1,000,000 bps). 
+Sin embargo, el programa está pensado para ser ampliado en el futuro, por ejemplo, incorporando unidades como Terabytes o bits, añadiendo más pruebas automáticas y permitiendo configurar el formato de salida de los resultados.
+
