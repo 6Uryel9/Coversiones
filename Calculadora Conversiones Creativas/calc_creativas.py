@@ -1,9 +1,12 @@
 import math
 
-gravedad=6.6674*10**-11
-vel_luz=3*10**8
+# Constantes físicas
+GRAVEDAD = 6.6674 * 10**-11   # Constante de gravitación universal (N·m²/kg²)
+VEL_LUZ = 3 * 10**8           # Velocidad de la luz en el vacío (m/s)
+
 
 def menu():
+    """Muestra las opciones disponibles en el menú principal."""
     print("Estas son algunas de las ideas que puedes explorar:")
     print("1. Altura en torres de libros")
     print("2. Peso equivalente en gatitos")
@@ -13,14 +16,22 @@ def menu():
     print("6. Pruebas con valores estándar")
     print("7. Salir")
 
-def altura_libros(altura,unidad):
-    cem=0
-    res = 0
 
+def altura_libros(altura, unidad):
+    """
+    Convierte una altura en diferentes unidades a la cantidad equivalente
+    de libros 'Don Quijote' y 'El Principito' que formarían esa torre.
+
+    - Cada libro del Quijote mide 8 cm.
+    - Cada libro del Principito mide 1 cm.
+    """
+    cem = 0
+
+    # Conversión de unidades a centímetros
     if unidad == 'km':
-        cem = altura* 100000
+        cem = altura * 100000
     elif unidad == 'm':
-        cem = altura*100
+        cem = altura * 100
     elif unidad == 'cm':
         cem = altura
     elif unidad == 'mm':
@@ -34,95 +45,116 @@ def altura_libros(altura,unidad):
     elif unidad == 'mi':
         cem = altura * 160934
 
-    if cem>=8:
-        quijote=int(cem//8)
-        res=cem%8
+    # Número de libros equivalentes
+    if cem >= 8:
+        quijote = int(cem // 8)
+        res = cem % 8
     else:
-        quijote=0
-        res=cem
-    if res>=1:
-        principito=int(res//1)
+        quijote = 0
+        res = cem
+
+    if res >= 1:
+        principito = int(res // 1)
     else:
-        principito=0
+        principito = 0
 
     print("La torre de libros tendría: ")
-    print(quijote," Libros del Quijote de la mancha")
-    print(principito," Libros del Princpito")
+    print(quijote, " Libros del Quijote de la Mancha")
+    print(principito, " Libros del Principito")
 
-def peso_gatitos(peso,unidad):
-    kilo=0
-    res = 0
-    gatos=0
-    gatitos=0
 
+def peso_gatitos(peso, unidad):
+    """
+    Convierte un peso en diferentes unidades al equivalente en gatos adultos
+    y gatitos pequeños.
+
+    - Un gato adulto pesa 4 kg.
+    - Un gatito pesa 1.5 kg.
+    """
+    kilo = 0
+
+    # Conversión de unidades a kilogramos
     if unidad == 'ton':
         kilo = peso * 1000
     elif unidad == 'kg':
         kilo = peso
     elif unidad == 'g':
-        kilo = peso/1000
+        kilo = peso / 1000
     elif unidad == 'lb':
-        kilo = peso*0.45359237
+        kilo = peso * 0.45359237
     elif unidad == 'oz':
-        kilo = peso*0.0283495231
+        kilo = peso * 0.0283495231
     elif unidad == 'slug':
-        kilo = peso*14.5939
+        kilo = peso * 14.5939
 
+    # Número de gatos y gatitos
     if kilo >= 4:
         gatos = kilo // 4
         res = kilo % 4
     else:
         gatos = 0
         res = kilo
+
     if res >= 1.5:
         gatitos = res // 1.5
     else:
         gatitos = 0
 
     print("Por ese peso tendrías:")
-    print(int(gatos)," Gatos adultos de 4 kg")
-    print(int(gatitos)," Gatitos de 1.5 kg")
+    print(int(gatos), " Gatos adultos de 4 kg")
+    print(int(gatitos), " Gatitos de 1.5 kg")
 
-def energia_en_barras(energia,unidad):
-    kcal=0
-    ferrero=0
-    hersheys=0
-    carlos=0
-    ton_tnt=0
 
-    if unidad=='kcal':
-        kcal=energia
+def energia_en_barras(energia, unidad):
+    """
+    Convierte una cantidad de energía a su equivalente en barras de chocolate
+    y toneladas de TNT.
+
+    - Ferrero Rocher = 73 kcal
+    - Hershey's = 210 kcal
+    - Carlos V = 140 kcal
+    - Tonelada de TNT ≈ 1,000,000 kcal
+    """
+    kcal = 0
+
+    # Conversión de unidades a kilocalorías
+    if unidad == 'kcal':
+        kcal = energia
     elif unidad == 'J':
-        kcal = energia/4184
+        kcal = energia / 4184
     elif unidad == 'kJ':
-        kcal = energia/4.184
-    elif unidad=='kWh':
-        kcal = energia*860.4
-    elif unidad =='BTU':
-        kcal = energia*0.252
+        kcal = energia / 4.184
+    elif unidad == 'kWh':
+        kcal = energia * 860.4
+    elif unidad == 'BTU':
+        kcal = energia * 0.252
 
-    ferrero=kcal/73
-    hersheys=kcal/210
-    carlos=kcal/140
-    ton_tnt=kcal/10**6
+    # Equivalencias
+    ferrero = kcal / 73
+    hersheys = kcal / 210
+    carlos = kcal / 140
+    ton_tnt = kcal / 10**6
 
     print("Tendrías:")
-    print(f"{ferrero:.2f}"," piezas de Ferrero Rocher")
-    print(f"{hersheys:.2f}"," barras de Hersheys")
-    print(f"{carlos:.2f}"," barritas de Carlos v")
-    print(f"{ton_tnt:2f}"," toneladas de TNT")
+    print(f"{ferrero:.2f}", " piezas de Ferrero Rocher")
+    print(f"{hersheys:.2f}", " barras de Hershey's")
+    print(f"{carlos:.2f}", " barritas de Carlos V")
+    print(f"{ton_tnt:.2f}", " toneladas de TNT")
 
-def vol_agujero_negro(volumen,unidad):
-    mtr=0
-    radio = 0
-    masa = 0
-    r_obs = 0
-    dif = 0
-    varia = 0
-    tiempo = 0
 
+def vol_agujero_negro(volumen, unidad):
+    """
+    Calcula las propiedades físicas de un agujero negro
+    a partir de un volumen dado:
+
+    - Radio del agujero negro
+    - Masa equivalente
+    - Dilatación temporal cerca del horizonte de sucesos
+    """
+
+    # Conversión de unidades a metros cúbicos
     if unidad == 'km':
-        mtr = (volumen * 10**9)
+        mtr = volumen * 10**9
     elif unidad == 'm':
         mtr = volumen
     elif unidad == 'cm':
@@ -138,42 +170,57 @@ def vol_agujero_negro(volumen,unidad):
     elif unidad == 'mi':
         mtr = volumen * 1609.34**3
     elif unidad == 'l':
-        mtr = volumen*0.001
+        mtr = volumen * 0.001
     elif unidad == 'gal':
-        mtr = volumen*0.003785
+        mtr = volumen * 0.003785
 
-    radio = ((mtr*3)/(math.pi*4))**(1/3)
-    numerador = math.pow(vel_luz,2)*radio
-    masa=numerador/(2*gravedad)
-    r_obs = radio*1.5
-    dif = 1-(radio/r_obs)
+    # Cálculos físicos
+    # Radio equivalente al volumen (esfera)
+    radio = ((mtr * 3) / (4 * math.pi)) ** (1 / 3)
+
+    # Masa del agujero negro (fórmula del radio de Schwarzschild despejada)
+    masa = (radio * VEL_LUZ ** 2) / (2 * GRAVEDAD)
+
+    # Horizonte de sucesos
+    r_s = (2 * GRAVEDAD * masa) / (VEL_LUZ ** 2)
+
+    # Dilatación temporal: relación tiempo exterior / tiempo cerca del horizonte
+    radio = ((mtr * 3) / (math.pi * 4)) ** (1 / 3)
+    numerador = math.pow(VEL_LUZ, 2) * radio
+    masa = numerador / (2 * GRAVEDAD)
+    r_obs = radio * 1.5
+    dif = 1 - (radio / r_obs)
     varia = math.sqrt(dif)
-    tiempo = varia*60
+    tiempo = varia * 60
 
-    print("Tendría:")
-    print(f"{radio:.2f}","m de radio")
-    print(f"{masa:.2f}","kg de masa")
-    print("Y cerca de él transcurrirían ", f"{tiempo:.2f}"," minutos,"
-        " mientras en la tierra transcurriría 1 hora")
+    # Resultados
+    print("Propiedades del Agujero Negro:")
+    print(f"Radio equivalente: {radio:.2f} m")
+    print(f"Masa: {masa:.2e} kg")  # notación científica base 10
+    print(f"Tiempo cerca del horizonte: {tiempo:.2f} min (vs 1 hora en la Tierra)")
 
 def distancia_marina(distancia, unidad):
+    mtr=0
+    # Conversión de la distancia ingresada a metros
     if unidad == 'km':
-        mtr = distancia * 1000
+        mtr = distancia * 1000  # kilómetros a metros
     elif unidad == 'm':
-        mtr = distancia
+        mtr = distancia  # ya está en metros
     elif unidad == 'cm':
-        mtr = distancia / 100
+        mtr = distancia / 100  # centímetros a metros
     elif unidad == 'mm':
-        mtr = distancia / 1000
+        mtr = distancia / 1000  # milímetros a metros
     elif unidad == 'in':
-        mtr = distancia * 0.0254
+        mtr = distancia * 0.0254  # pulgadas a metros
     elif unidad == 'ft':
-        mtr = distancia * 0.3048
+        mtr = distancia * 0.3048  # pies a metros
     elif unidad == 'yd':
-        mtr = distancia * 0.9144
+        mtr = distancia * 0.9144  # yardas a metros
     elif unidad == 'mi':
-        mtr = distancia * 1609.34
+        mtr = distancia * 1609.34  # millas a metros
 
+    # Lista de especies con su tamaño de referencia en metros
+    # Ejemplo: 1 ballena azul equivale a 24 m de distancia
     especies = [
         ("Ballenas azules", 24),
         ("Calamares gigantes", 10),
@@ -187,34 +234,51 @@ def distancia_marina(distancia, unidad):
         ("Rotiferos", 0.001)
     ]
 
+    # Diccionario para guardar los resultados
     resultado = {}
-    for nombre,valor in especies:
+
+    # Descomposición de la distancia en unidades equivalentes a los animales
+    for nombre, valor in especies:
         if mtr >= valor:
-            cantidad = mtr // valor
-            mtr = mtr % valor
+            cantidad = mtr // valor  # cuántos caben completos
+            mtr = mtr % valor  # resto de la distancia
             resultado[nombre] = int(cantidad)
         else:
-            resultado[nombre] = 0
+            resultado[nombre] = 0  # si no cabe ninguno, queda en 0
 
+    # Mostrar los resultados finales
     print("Equivale a esta cantidad de animales marinos: ")
     for nombre in resultado:
-        print(nombre,": ", resultado[nombre])
+        print(nombre, ": ", resultado[nombre])
 
 def pruebas(op):
-    if op==1:
-        print(altura_libros(2.3,'m'))
-    elif op==2:
-        print(peso_gatitos(87755,'g'))
-    elif op==3:
-        print(energia_en_barras(2000,'kWh'))
-    elif op==4:
-        print(vol_agujero_negro(1,'km'))
-    elif op==5:
-        distancia_marina(47.271,'m')
+    """
+    Ejecuta pruebas rápidas con valores predefinidos
+    para verificar el funcionamiento de las funciones principales.
+
+    Parámetros:
+        op (int): número de la opción de prueba.
+    """
+    if op == 1:
+        print(altura_libros(2.3, 'm'))  # Torre de libros para 2.3 m
+    elif op == 2:
+        print(peso_gatitos(87755, 'g'))  # Peso de 87,755 g en gatos/gatitos
+    elif op == 3:
+        print(energia_en_barras(2000, 'kWh'))  # Energía de 2000 kWh en equivalencias
+    elif op == 4:
+        print(vol_agujero_negro(1, 'km'))  # Agujero negro de volumen 1 km³
+    elif op == 5:
+        distancia_marina(47.271, 'm')  # Distancia de 47.271 m en animales marinos
     else:
         print("No se pudo realizar la consulta. Intenta de nuevo")
 
 def pedir_valor():
+    """
+    Solicita al usuario un valor numérico positivo.
+    Retorna:
+        float: el valor ingresado si es válido.
+        None: si el valor es menor o igual a 0.
+    """
     valor = float(input("Ingresa un valor: "))
     if valor <= 0:
         print("Valor no reconocido")
@@ -223,8 +287,16 @@ def pedir_valor():
         return valor
 
 def pedir_unidad(unidades):
+    """
+    Solicita al usuario una unidad de medida entre las disponibles.
+    Parámetros:
+        unidades (list): lista de unidades válidas.
+    Retorna:
+        str: la unidad seleccionada si es válida.
+        None: si no se reconoce la unidad.
+    """
     print("Unidades: ", unidades)
-    unidad = str(input("Ingresa un unidad: "))
+    unidad = str(input("Ingresa una unidad: "))
     if unidad in unidades:
         return unidad
     else:
@@ -232,106 +304,162 @@ def pedir_unidad(unidades):
         return None
 
 def regresar_menu():
+    """
+    Pregunta al usuario si desea regresar al menú principal.
+    Retorna:
+        None: si se presiona Enter (regresar al menú).
+        False: si se presiona cualquier otra tecla (salir).
+    """
     print("Presiona Enter para regresar al menú, "
           "o cualquier otra tecla para salir")
     valor=input()
     if valor == "":
         return None
     else:
-        return False
+        return True
 
 def main_calc_creativas():
-    menu()
+    print("----------CONVERSIONES CREATIVAS--------------")
+    """
+    Función principal del programa de conversiones creativas.
+    Muestra un menú con distintas opciones de conversión y gestiona
+    la interacción con el usuario.
+    """
+
     while True:
-        op=int(input("Elige una opción: "))
-        if op==1:
-            print("A cuántos libros equivalen:")
-            altura=pedir_valor()
-            while altura is None:
-                altura=pedir_valor()
+        menu()  # Mostrar el menú inicial
+        # Solicitar opción del usuario
+        op = int(input("Elige una opción: "))
+
+        # --- Opción 1: Altura en equivalentes de libros ---
+        if op == 1:
+            print("----------TORRES DE LIBROS----------"
+                  "A cuántos libros equivalen:")
+            altura = pedir_valor()
+            while altura is None:  # Validar hasta recibir valor correcto
+                altura = pedir_valor()
+
             unidades = ['km', 'm', 'cm', 'mm', 'in', 'ft', 'yd', 'mi']
-            unidad=pedir_unidad(unidades)
-            while unidad is None:
-                unidad=pedir_unidad(unidades)
-            altura_libros(altura,unidad)
-            valor=regresar_menu()
+            unidad = pedir_unidad(unidades)
+            while unidad is None:  # Validar unidad
+                unidad = pedir_unidad(unidades)
+
+            altura_libros(altura, unidad)
+
+            # Decidir si regresar al menú o salir
+            valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==2:
+
+        # --- Opción 2: Peso en gatos/gatitos ---
+        elif op == 2:
+            print("----------PESO EN GATOS Y GATITOS----------")
             print("A cuántos Gatos y Gatitos equivalen:")
             peso = pedir_valor()
             while peso is None:
                 peso = pedir_valor()
-            unidades = ['ton','kg','g','lb','oz','slug']
+
+            unidades = ['ton', 'kg', 'g', 'lb', 'oz', 'slug']
             unidad = pedir_unidad(unidades)
             while unidad is None:
                 unidad = pedir_unidad(unidades)
+
             peso_gatitos(peso, unidad)
+
             valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==3:
-            print("A cuántas barras o tTNT equivalen:")
+
+        # --- Opción 3: Energía en barras de chocolate o TNT ---
+        elif op == 3:
+            print("---------ENERGÍA EN BARRAS DE CHOCOLATE Y tTNT---------")
+            print("A cuántas barras o TNT equivalen:")
             energia = pedir_valor()
             while energia is None:
                 energia = pedir_valor()
+
             unidades = ['kcal', 'J', 'kJ', 'kWh', 'BTU']
             unidad = pedir_unidad(unidades)
             while unidad is None:
                 unidad = pedir_unidad(unidades)
-            energia_en_barras(energia,unidad)
+
+            energia_en_barras(energia, unidad)
+
             valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==4:
+
+        # --- Opción 4: Agujero negro a partir de volumen ---
+        elif op == 4:
+            print("-------VOLUMEN A PROPIEDADES DE UN AGUJERO NEGRO-------")
             print("Un Agujero Negro de volumen:")
             volumen = pedir_valor()
             while volumen is None:
                 volumen = pedir_valor()
+
             unidades = ['km', 'm', 'cm', 'mm', 'in', 'ft', 'yd', 'mi', 'l', 'gal']
             unidad = pedir_unidad(unidades)
             while unidad is None:
                 unidad = pedir_unidad(unidades)
-            vol_agujero_negro(volumen,unidad)
+
+            vol_agujero_negro(volumen, unidad)
+
             valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==5:
+
+        # --- Opción 5: Distancia en equivalentes de animales marinos ---
+        elif op == 5:
+            print("--------DISTANCIA EQUIVALENTE EN ANIMALES MARINOS-------")
             print("La distancia:")
             distancia = pedir_valor()
             while distancia is None:
                 distancia = pedir_valor()
+
             unidades = ['km', 'm', 'cm', 'mm', 'in', 'ft', 'yd', 'mi']
             unidad = pedir_unidad(unidades)
             while unidad is None:
                 unidad = pedir_unidad(unidades)
-            distancia_marina(distancia,unidad)
+
+            distancia_marina(distancia, unidad)
+
             valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==6:
-            op=pedir_valor()
+
+        # --- Opción 6: Pruebas rápidas ---
+        elif op == 6:
+            print("----PRUEBAS DE LAS FUNCIONES CON VALORES POR DEFAULT----")
+            op = pedir_valor()
             while op is None:
                 op = pedir_valor()
+
             pruebas(op)
+
             valor = regresar_menu()
             if valor is None:
                 continue
             else:
                 break
-        elif op==7:
-            print ("Has salido con éxito, gracias por tu visista.")
+
+        # --- Opción 7: Salida del programa ---
+        elif op == 7:
+            print("Has salido con éxito, gracias por tu visita.")
             break
+
+        # --- Entrada no válida ---
         else:
-            print("Opcion no valida")
+            print("Opción no válida. Intenta de nuevo.")
+
+# Llamada principal
 main_calc_creativas()
