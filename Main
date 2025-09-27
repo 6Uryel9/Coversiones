@@ -1,0 +1,31 @@
+from proyecto_calculadora import calc_A
+from proyecto_calculadora import calc_fisica
+from proyecto_calculadora import calc_digital
+from proyecto_calculadora import calc_creativas
+
+def menu_principal():
+    print("=== MENÚ PRINCIPAL ===")
+    print("1. Calculadora Numérico Avanzado")
+    print("2. Calculadora Física")
+    print("3. Calculadora Digital")
+    print("4. Calculadora Creativa")
+    print("5. Salir")
+
+def main():
+    while True:
+        menu_principal()
+        opcion = int(input("Seleccione una opción (1-5): "))
+        if opcion == 1:
+            calc_A.main_calc_A()
+        elif opcion == 2:
+            calc_fisica.main_calc_fisica()
+        elif opcion == 3:
+            calc_digital.main_calculadoradigital()
+        elif opcion == 4:
+            calc_creativas.main_calc_creativas()
+        elif opcion == 5:
+            print("Saliendo del programa. ¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida. Intente de nuevo.")
+main()
