@@ -1,0 +1,179 @@
+
+def menu():
+    print("=== CONVERSOR ===")
+    print("Unidades de DISTANCIA: km, m, cm, mm")
+    print("Unidades de TEMPERATURA: C, F, K")
+    print("1. Convertir distancia")
+    print("2. Tabla rápida de distancia (a km, m, cm, mm)")
+    print("3. Convertir temperatura")
+    print("4. Tabla rápida de temperatura (a C, F, K)")
+    print("5. Pruebas con valores estándar")
+    print("6. Salir")
+
+
+def conv_distancia(valor, origen, destino):
+    if origen == 'km':
+        factor_origen = 1000.0
+    elif origen == 'm':
+        factor_origen = 1.0
+    elif origen == 'cm':
+        factor_origen = 0.01
+    elif origen == 'mm':
+        factor_origen = 0.001
+    else:
+        print("Unidad origen no reconocida (usa km, m, cm, mm)")
+        return None
+
+    if destino == 'km':
+        factor_destino = 1000.0
+    elif destino == 'm':
+        factor_destino = 1.0
+    elif destino == 'cm':
+        factor_destino = 0.01
+    elif destino == 'mm':
+        factor_destino = 0.001
+    else:
+        print("Unidad destino no reconocida (usa km, m, cm, mm)")
+        return None
+
+    metros = valor * factor_origen
+    resultado = metros / factor_destino
+    return resultado
+
+def tabla_distancia(valor, origen):
+    print("\nTabla rápida de DISTANCIA (desde", valor, origen, ")")
+    print("km:", conv_distancia(valor, origen, 'km'))
+    print(" m:", conv_distancia(valor, origen, 'm'))
+    print("cm:", conv_distancia(valor, origen, 'cm'))
+    print("mm:", conv_distancia(valor, origen, 'mm'))
+
+
+def conv_temperatura(valor, origen, destino):
+    if origen == 'C':
+        c = valor
+    elif origen == 'F':
+        c = (valor - 32.0) * 5.0/9.0
+    elif origen == 'K':
+        c = valor - 273.15
+    else:
+        print("Unidad origen no reconocida (usa C, F, K)")
+        return None
+
+    if destino == 'C':
+        return c
+    elif destino == 'F':
+        return c * 9.0/5.0 + 32.0
+    elif destino == 'K':
+        return c + 273.15
+    else:
+        print("Unidad destino no reconocida (usa C, F, K)")
+        return None
+
+def tabla_temperatura(valor, origen):
+    print("\nTabla rápida de TEMPERATURA (desde", valor, origen, ")")
+    print("C:", conv_temperatura(valor, origen, 'C'))
+    print("F:", conv_temperatura(valor, origen, 'F'))
+    print("K:", conv_temperatura(valor, origen, 'K'))
+
+
+
+def pedir_valor():
+    valor = float(input("Ingresa un valor: "))
+    return valor
+
+def pedir_unidad_dist():
+    unidad = input("Ingresa una UNIDAD DE DISTANCIA (km/m/cm/mm): ")
+    if unidad == 'km' or unidad == 'm' or unidad == 'cm' or unidad == 'mm':
+        return unidad
+    else:
+        print("Unidad no reconocida (usa km, m, cm, mm)")
+        return None
+
+def pedir_unidad_temp():
+    unidad = input("Ingresa una UNIDAD DE TEMPERATURA (C/F/K): ")
+    if unidad == 'C' or unidad == 'F' or unidad == 'K':
+        return unidad
+    else:
+        print("Unidad no reconocida (usa C, F, K)")
+        return None
+
+
+
+def pruebas(op):
+    if op == 1:
+        
+        print(conv_distancia(2500, 'm', 'cm'))
+    elif op == 2:
+       
+        tabla_distancia(1.75, 'km')
+    elif op == 3:
+        
+        print(conv_temperatura(25, 'C', 'F'))
+    elif op == 4:
+        
+        tabla_temperatura(300, 'K')
+    else:
+        print("No se pudo realizar la consulta. Intenta de nuevo")
+
+
+def main():
+    while True:
+        menu()
+        op = int(input("Elige una opción: "))
+
+        if op == 1:
+            print("Conversión de distancia (km, m, cm, mm)")
+            valor = pedir_valor()
+            u1 = pedir_unidad_dist()
+            while u1 is None:
+                u1 = pedir_unidad_dist()
+            u2 = pedir_unidad_dist()
+            while u2 is None:
+                u2 = pedir_unidad_dist()
+            r = conv_distancia(valor, u1, u2)
+            if r is not None:
+                print(valor, u1, "=", r, u2)
+
+        elif op == 2:
+            print("Tabla rápida (distancia)")
+            valor = pedir_valor()
+            u1 = pedir_unidad_dist()
+            while u1 is None:
+                u1 = pedir_unidad_dist()
+            tabla_distancia(valor, u1)
+
+        elif op == 3:
+            print("Conversión de temperatura (C, F, K)")
+            valor = pedir_valor()
+            u1 = pedir_unidad_temp()
+            while u1 is None:
+                u1 = pedir_unidad_temp()
+            u2 = pedir_unidad_temp()
+            while u2 is None:
+                u2 = pedir_unidad_temp()
+            r = conv_temperatura(valor, u1, u2)
+            if r is not None:
+                print(valor, u1, "=", r, u2)
+
+        elif op == 4:
+            print("Tabla rápida (temperatura)")
+            valor = pedir_valor()
+            u1 = pedir_unidad_temp()
+            while u1 is None:
+                u1 = pedir_unidad_temp()
+            tabla_temperatura(valor, u1)
+
+        elif op == 5:
+            print("Pruebas con valores estándar")
+            print("1) Distancia puntual | 2) Distancia tabla | 3) Temp puntual | 4) Temp tabla")
+            sub = int(input("Elige prueba: "))
+            pruebas(sub)
+
+        elif op == 6:
+            print("Nos vemos, mi inge")
+            break
+
+        else:
+            print("Opción inválida")
+
+main()
