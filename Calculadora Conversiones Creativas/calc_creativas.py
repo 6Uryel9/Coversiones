@@ -25,40 +25,34 @@ def altura_libros(altura, unidad):
     - Cada libro del Quijote mide 8 cm.
     - Cada libro del Principito mide 1 cm.
     """
-    cem = 0
+    # Lista bidimensional: [unidad, factor para convertir a centímetros]
+    conversiones = [
+        ["km", 100000],
+        ["m", 100],
+        ["cm", 1],
+        ["mm", 0.1],
+        ["in", 2.54],
+        ["ft", 30.48],
+        ["yd", 91.44],
+        ["mi", 160934]
+    ]
 
-    # Conversión de unidades a centímetros
-    if unidad == 'km':
-        cem = altura * 100000
-    elif unidad == 'm':
-        cem = altura * 100
-    elif unidad == 'cm':
-        cem = altura
-    elif unidad == 'mm':
-        cem = altura / 10
-    elif unidad == 'in':
-        cem = altura * 2.54
-    elif unidad == 'ft':
-        cem = altura * 30.48
-    elif unidad == 'yd':
-        cem = altura * 91.44
-    elif unidad == 'mi':
-        cem = altura * 160934
+    cem = None
+    for u, factor in conversiones:
+        if unidad == u:
+            cem = altura * factor
+            break
+
+    if cem is None:
+        print("Unidad no reconocida.")
+        return
 
     # Número de libros equivalentes
-    if cem >= 8:
-        quijote = int(cem // 8)
-        res = cem % 8
-    else:
-        quijote = 0
-        res = cem
+    quijote = int(cem // 8)
+    res = cem % 8
+    principito = int(res // 1)
 
-    if res >= 1:
-        principito = int(res // 1)
-    else:
-        principito = 0
-
-    print("La torre de libros tendría: ")
+    print("La torre de libros tendría:")
     print(quijote, " Libros del Quijote de la Mancha")
     print(principito, " Libros del Principito")
 
@@ -71,38 +65,32 @@ def peso_gatitos(peso, unidad):
     - Un gato adulto pesa 4 kg.
     - Un gatito pesa 1.5 kg.
     """
-    kilo = 0
+    conversiones = [
+        ["ton", 1000],
+        ["kg", 1],
+        ["g", 0.001],
+        ["lb", 0.45359237],
+        ["oz", 0.0283495231],
+        ["slug", 14.5939]
+    ]
 
-    # Conversión de unidades a kilogramos
-    if unidad == 'ton':
-        kilo = peso * 1000
-    elif unidad == 'kg':
-        kilo = peso
-    elif unidad == 'g':
-        kilo = peso / 1000
-    elif unidad == 'lb':
-        kilo = peso * 0.45359237
-    elif unidad == 'oz':
-        kilo = peso * 0.0283495231
-    elif unidad == 'slug':
-        kilo = peso * 14.5939
+    kilo = None
+    for u, factor in conversiones:
+        if unidad == u:
+            kilo = peso * factor
+            break
 
-    # Número de gatos y gatitos
-    if kilo >= 4:
-        gatos = kilo // 4
-        res = kilo % 4
-    else:
-        gatos = 0
-        res = kilo
+    if kilo is None:
+        print("Unidad no reconocida.")
+        return
 
-    if res >= 1.5:
-        gatitos = res // 1.5
-    else:
-        gatitos = 0
+    gatos = int(kilo // 4)
+    res = kilo % 4
+    gatitos = int(res // 1.5)
 
     print("Por ese peso tendrías:")
-    print(int(gatos), " Gatos adultos de 4 kg")
-    print(int(gatitos), " Gatitos de 1.5 kg")
+    print(gatos, " Gatos adultos de 4 kg")
+    print(gatitos, " Gatitos de 1.5 kg")
 
 
 def energia_en_barras(energia, unidad):
@@ -115,21 +103,24 @@ def energia_en_barras(energia, unidad):
     - Carlos V = 140 kcal
     - Tonelada de TNT ≈ 1,000,000 kcal
     """
-    kcal = 0
+    conversiones = [
+        ["kcal", 1],
+        ["J", 1 / 4184],
+        ["kJ", 1 / 4.184],
+        ["kWh", 860.4],
+        ["BTU", 0.252]
+    ]
 
-    # Conversión de unidades a kilocalorías
-    if unidad == 'kcal':
-        kcal = energia
-    elif unidad == 'J':
-        kcal = energia / 4184
-    elif unidad == 'kJ':
-        kcal = energia / 4.184
-    elif unidad == 'kWh':
-        kcal = energia * 860.4
-    elif unidad == 'BTU':
-        kcal = energia * 0.252
+    kcal = None
+    for u, factor in conversiones:
+        if unidad == u:
+            kcal = energia * factor
+            break
 
-    # Equivalencias
+    if kcal is None:
+        print("Unidad no reconocida.")
+        return
+
     ferrero = kcal / 73
     hersheys = kcal / 210
     carlos = kcal / 140
@@ -151,76 +142,69 @@ def vol_agujero_negro(volumen, unidad):
     - Masa equivalente
     - Dilatación temporal cerca del horizonte de sucesos
     """
+    conversiones = [
+        ["km", 10**9],
+        ["m", 1],
+        ["cm", 1 / 10**6],
+        ["mm", 1 / 10**9],
+        ["in", 0.0254**3],
+        ["ft", 0.3048**3],
+        ["yd", 0.9144**3],
+        ["mi", 1609.34**3],
+        ["l", 0.001],
+        ["gal", 0.003785]
+    ]
 
-    # Conversión de unidades a metros cúbicos
-    if unidad == 'km':
-        mtr = volumen * 10**9
-    elif unidad == 'm':
-        mtr = volumen
-    elif unidad == 'cm':
-        mtr = volumen / 10**6
-    elif unidad == 'mm':
-        mtr = volumen / 10**9
-    elif unidad == 'in':
-        mtr = volumen * 0.0254**3
-    elif unidad == 'ft':
-        mtr = volumen * 0.3048**3
-    elif unidad == 'yd':
-        mtr = volumen * 0.9144**3
-    elif unidad == 'mi':
-        mtr = volumen * 1609.34**3
-    elif unidad == 'l':
-        mtr = volumen * 0.001
-    elif unidad == 'gal':
-        mtr = volumen * 0.003785
+    mtr = None
+    for u, factor in conversiones:
+        if unidad == u:
+            mtr = volumen * factor
+            break
+
+    if mtr is None:
+        print("Unidad no reconocida.")
+        return
 
     # Cálculos físicos
-    # Radio equivalente al volumen (esfera)
     radio = ((mtr * 3) / (4 * math.pi)) ** (1 / 3)
-
-    # Masa del agujero negro (fórmula del radio de Schwarzschild despejada)
     masa = (radio * VEL_LUZ ** 2) / (2 * GRAVEDAD)
 
-    # Horizonte de sucesos
-    r_s = (2 * GRAVEDAD * masa) / (VEL_LUZ ** 2)
-
-    # Dilatación temporal: relación tiempo exterior / tiempo cerca del horizonte
-    radio = ((mtr * 3) / (math.pi * 4)) ** (1 / 3)
-    numerador = math.pow(VEL_LUZ, 2) * radio
-    masa = numerador / (2 * GRAVEDAD)
     r_obs = radio * 1.5
     dif = 1 - (radio / r_obs)
-    varia = math.sqrt(dif)
-    tiempo = varia * 60
+    tiempo = math.sqrt(dif) * 60
 
-    # Resultados
     print("Propiedades del Agujero Negro:")
     print(f"Radio equivalente: {radio:.2f} m")
-    print(f"Masa: {masa:.2e} kg")  # notación científica base 10
+    print(f"Masa: {masa:.2e} kg")
     print(f"Tiempo cerca del horizonte: {tiempo:.2f} min (vs 1 hora en la Tierra)")
 
-def distancia_marina(distancia, unidad):
-    mtr=0
-    # Conversión de la distancia ingresada a metros
-    if unidad == 'km':
-        mtr = distancia * 1000  # kilómetros a metros
-    elif unidad == 'm':
-        mtr = distancia  # ya está en metros
-    elif unidad == 'cm':
-        mtr = distancia / 100  # centímetros a metros
-    elif unidad == 'mm':
-        mtr = distancia / 1000  # milímetros a metros
-    elif unidad == 'in':
-        mtr = distancia * 0.0254  # pulgadas a metros
-    elif unidad == 'ft':
-        mtr = distancia * 0.3048  # pies a metros
-    elif unidad == 'yd':
-        mtr = distancia * 0.9144  # yardas a metros
-    elif unidad == 'mi':
-        mtr = distancia * 1609.34  # millas a metros
 
-    # Lista de especies con su tamaño de referencia en metros
-    # Ejemplo: 1 ballena azul equivale a 24 m de distancia
+def distancia_marina(distancia, unidad):
+    """
+    Convierte una distancia en diversas unidades a metros,
+    luego la descompone en equivalentes de animales marinos.
+    """
+    conversiones = [
+        ["km", 1000],
+        ["m", 1],
+        ["cm", 0.01],
+        ["mm", 0.001],
+        ["in", 0.0254],
+        ["ft", 0.3048],
+        ["yd", 0.9144],
+        ["mi", 1609.34]
+    ]
+
+    mtr = None
+    for u, factor in conversiones:
+        if unidad == u:
+            mtr = distancia * factor
+            break
+
+    if mtr is None:
+        print("Unidad no reconocida.")
+        return
+
     especies = [
         ("Ballenas azules", 24),
         ("Calamares gigantes", 10),
@@ -231,25 +215,21 @@ def distancia_marina(distancia, unidad):
         ("Medusas", 0.2),
         ("Caballitos de mar", 0.06),
         ("Krill", 0.01),
-        ("Rotiferos", 0.001)
+        ("Rotíferos", 0.001)
     ]
 
-    # Diccionario para guardar los resultados
     resultado = {}
-
-    # Descomposición de la distancia en unidades equivalentes a los animales
     for nombre, valor in especies:
         if mtr >= valor:
-            cantidad = mtr // valor  # cuántos caben completos
-            mtr = mtr % valor  # resto de la distancia
-            resultado[nombre] = int(cantidad)
+            cantidad = int(mtr // valor)
+            mtr %= valor
+            resultado[nombre] = cantidad
         else:
-            resultado[nombre] = 0  # si no cabe ninguno, queda en 0
+            resultado[nombre] = 0
 
-    # Mostrar los resultados finales
-    print("Equivale a esta cantidad de animales marinos: ")
-    for nombre in resultado:
-        print(nombre, ": ", resultado[nombre])
+    print("Equivale a esta cantidad de animales marinos:")
+    for nombre, cantidad in resultado.items():
+        print(f"{nombre}: {cantidad}")
 
 def pruebas(op):
     """
