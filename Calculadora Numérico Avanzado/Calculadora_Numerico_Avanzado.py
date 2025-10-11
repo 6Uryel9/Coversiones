@@ -38,6 +38,9 @@ def casos_de_prueba():
     print("7. Decimal a Romano (1994):", decimal_a_romano(1994), "-> esperado: MCMXCIV")
     print("8. Romano a Decimal (XXXIX):", romano_a_decimal("XXXIX"), "-> esperado: 39")
 
+
+'''Convierte un número decimal (n) a su equivalente en binario, retornando una 
+cadena con el número binario.'''
 def decimal_a_binario(n):
     if n == 0:
         return "0"
@@ -46,6 +49,9 @@ def decimal_a_binario(n):
         binario = str(n % 2) + binario
         n = n // 2
     return binario
+
+'''Convierte un número binario (b) en una cadena a su equivalente en decimal, 
+retornando un valor entero.'''
 def binario_a_decimal(b):
     decimal = 0
     potencia = 0
@@ -53,6 +59,9 @@ def binario_a_decimal(b):
         decimal += int(digito) * (2 ** potencia)
         potencia += 1
     return decimal
+
+'''Convierte un número decimal (n) a su equivalente en octal, retornando una
+cadena con el número octal.'''
 def decimal_a_octal(n):
     if n == 0:
         return "0"
@@ -61,6 +70,9 @@ def decimal_a_octal(n):
         octal = str(n % 8) + octal
         n = n // 8
     return octal
+
+'''Convierte un número octal (o) en una cadena a su equivalente en decimal, 
+retornando un valor entero.'''
 def octal_a_decimal(o):
     decimal = 0
     potencia = 0
@@ -68,6 +80,9 @@ def octal_a_decimal(o):
         decimal += int(digito) * (8 ** potencia)
         potencia += 1
     return decimal
+
+'''Convierte un número decimal (n) a su equivalente en hexadecimal, retornando 
+una cadena con el número hexadecimal.'''
 def decimal_a_hexadecimal(n):
     if n == 0:
         return "0"
@@ -77,6 +92,9 @@ def decimal_a_hexadecimal(n):
         hexadecimal = hexadecimales[n % 16] + hexadecimal
         n = n // 16
     return hexadecimal
+
+'''Convierte un número hexadecimal (h) en una cadena a su equivalente en decimal, 
+retornando un valor entero.'''
 def hexadecimal_a_decimal(h):
     hexadecimales = "0123456789ABCDEF"
     decimal = 0
@@ -85,6 +103,9 @@ def hexadecimal_a_decimal(h):
         decimal += hexadecimales.index(digito) * (16 ** potencia)
         potencia += 1
     return decimal
+
+'''Convierte un número decimal (n) a su equivalente en números romanos, retornando 
+una cadena con el número romano.'''
 def decimal_a_romano(n):
     valores = [
         (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"),
@@ -98,6 +119,9 @@ def decimal_a_romano(n):
             romano += simbolo
             n -= valor
     return romano
+
+'''Convierte un número romano (r) en una cadena a su equivalente en decimal, 
+retornando un valor entero.'''
 def romano_a_decimal(r):
     valores = {
         "I": 1, "V": 5, "X": 10, "L": 50,
@@ -113,7 +137,11 @@ def romano_a_decimal(r):
             decimal += valores[r[i]]
             i += 1
     return decimal
+
+
 def menu():
+    print("=== MENÚ CALCULADORA NUMÉRICO AVANZADO ===")
+    print("\n")
     print("1. Decimal a Binario")
     print("2. Binario a Decimal")
     print("3. Decimal a Octal")
@@ -124,73 +152,3 @@ def menu():
     print("8. Romano a Decimal")
     print("9. Casos de Prueba")
     print("10. Salir")
-
-def main_calc_A():
-    while True:
-        menu()
-        opcion = int(input("Seleccione una opción (1-9): "))
-        if opcion == 1:
-            while True:
-                n = int(input("Ingrese un número decimal: "))
-                print(f"Binario: {decimal_a_binario(n)}")
-                repetir = input("¿Desea hacer otra conversión Decimal a Binario? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 2:
-            while True:
-                b = input("Ingrese un número binario: ")
-                print(f"Decimal: {binario_a_decimal(b)}")
-                repetir = input("¿Desea hacer otra conversión Binario a Decimal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 3:
-            while True:
-                n = int(input("Ingrese un número decimal: "))
-                print(f"Octal: {decimal_a_octal(n)}")
-                repetir = input("¿Desea hacer otra conversión Decimal a Octal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 4:
-            while True:
-                o = input("Ingrese un número octal: ")
-                print(f"Decimal: {octal_a_decimal(o)}")
-                repetir = input("¿Desea hacer otra conversión Octal a Decimal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 5:
-            while True:
-                n = int(input("Ingrese un número decimal: "))
-                print(f"Hexadecimal: {decimal_a_hexadecimal(n)}")
-                repetir = input("¿Desea hacer otra conversión Decimal a Hexadecimal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 6:
-            while True:
-                h = input("Ingrese un número hexadecimal: ")
-                print(f"Decimal: {hexadecimal_a_decimal(h)}")
-                repetir = input("¿Desea hacer otra conversión Hexadecimal a Decimal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 7:
-            while True:
-                n = int(input("Ingrese un número decimal: "))
-                print(f"Romano: {decimal_a_romano(n)}")
-                repetir = input("¿Desea hacer otra conversión Decimal a Romano? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 8:
-            while True:
-                r = input("Ingrese un número romano: ")
-                print(f"Decimal: {romano_a_decimal(r)}")
-                repetir = input("¿Desea hacer otra conversión Romano a Decimal? (s/n): ").lower()
-                if repetir != "s":
-                    break
-        elif opcion == 9:
-            casos_de_prueba()
-        elif opcion == 10:
-            print("Saliendo...")
-            break
-        else:
-            print("Opción no válida. Intente de nuevo.")
-        input("Presione Enter para volver al menú...")
-main_calc_A()
