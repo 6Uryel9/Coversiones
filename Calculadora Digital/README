@@ -65,4 +65,25 @@ Cuando el usuario decida salir (por ejemplo, introduciendo un valor especial com
 
 
 
+El algoritmo evoluciona a lo siguiente (más compacto):
+
+Proceso general de ejecución:
+
+1. Se inicializan tres listas paralelas que contienen los datos necesarios para las conversiones:
+
+Cada índice de las listas representa un par de unidades con su factor de equivalencia correspondiente.
+
+- Presentación del menú...
+
+2. Se solicita al usuario que ingrese un número correspondiente a la opción deseada.
+
+3. Se determina el índice correspondiente al par de unidades seleccionado.
+
+4. Se solicita la dirección de conversión y el valor numérico a convertir.
+
+5. Se llama a la función convertir() pasando el índice, la dirección y el valor; esta función devuelve el resultado calculado según el factor correspondiente.
+
+6. Se imprime el resultado final en pantalla indicando claramente la conversión realizada con la animación.
+
+
 
