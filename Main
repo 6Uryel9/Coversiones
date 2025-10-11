@@ -85,7 +85,7 @@ def main():
                 else:
                     print("Opción no válida. Intente de nuevo.")
                 input("Presione Enter para volver al menú...")
-        elif opcion == 2
+        elif opcion == 2:
              if hasattr(fisicas, "menu"):
                     fisicas.menu()
                 elif hasattr(fisicas, "calculadora_fisica"):
