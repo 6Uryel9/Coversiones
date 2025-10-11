@@ -6,11 +6,93 @@ La idea es priorizar la validez, que no se produzcan errores en el proceso y se 
 
 En el módulo de longitud, la conversión que se realiza principalmente es la conversión de metros (m) a kilómetros (km), utilizando las relaciones estándar de transferencia de longitud, km=m/1000 y m=km×1000, 
 quedando claro que el usuario tiene que insertar la cantidad y que dirección será la que tomará la conversión, verifique que el dato introducido por el usuario sea un dato numérico y aplique las transformaciones que le correspondan. 
-Aunque las longitudes se utilizan en física como magnitudes sin signo (negativas), no consideraremos por defecto que las longitudes sean magnitudes siempre positivas (ya que podríamos estar, en algunas aplicaciones, del signo que podría tener una longitud por desplazamiento, 
+Aunque las longitudes se utilizan en física como magnitudes sin signo (negativas), no consideraremos por defecto que las longitudes sean magnitudes siempre positivas (ya que podríamos estar,
+en algunas aplicaciones, del signo que podría tener una longitud por desplazamiento, 
 si esto fuera requerido por la física en este contexto). Finalmente, el resultado se presentará en un formato fácilmente legible por un humano (por ejemplo la presentación de 2 a 3 decimales) y con la correspondiente unidad que acompaña la medida obtenida.
 
 
 En el módulo de temperatura se están realizando las transformaciones de Celsius ↔ Kelvin ya que las ecuaciones K=∘C+273.15 y ∘C=K−273.15.Además de validar que la entrada sea numérica, 
 el programa verificará la consistencia física del resultado: no se permitirán valores por debajo del cero absoluto (0 K), por lo que, si se ingresa una temperatura en Celsius menor a −273.15∘C, 
-el sistema lo indicará y pedirá un valor válido. Ambos módulos compartirán una estructura ordenada basada en funciones (una función por tipo de conversión) y un pequeño menú para elegir la operación; esto facilita su reutilización, 
+el sistema lo indicará y pedirá un valor válido. Ambos módulos compartirán una estructura ordenada basada en funciones (una función por tipo de conversión) y un pequeño menú para elegir la operación; 
+esto facilita su reutilización, 
 prueba y futura ampliación (por ejemplo, añadir centímetros o milímetros, o permitir más formatos de salida).
+
+Algoritmo de funciones.
+
+1) conv_distancia(valor, origen, destino)
+Objetivo: convertir una distancia usando metros como base.
+Algoritmo
+Validar origen
+1.1. Si origen = "km" → factor_origen ← 1000.0
+1.2. Si origen = "m" → factor_origen ← 1.0
+1.3. Si origen = "cm" → factor_origen ← 0.01
+1.4. Si origen = "mm" → factor_origen ← 0.001
+1.5. En otro caso: mostrar “unidad origen no reconocida” y regresar None.
+Validar destino
+2.1. Si destino = "km" → factor_destino ← 1000.0
+2.2. Si destino = "m" → factor_destino ← 1.0
+2.3. Si destino = "cm" → factor_destino ← 0.01
+2.4. Si destino = "mm" → factor_destino ← 0.001
+2.5. En otro caso: mostrar “unidad destino no reconocida” y regresar None.
+Calcular a base metros
+3.1. metros ← valor * factor_origen
+Convertir a destino
+4.1. resultado ← metros / factor_destino
+Regresar resultado.
+
+2) tabla_distancia(valor, origen)
+Objetivo: construir matriz con conversiones a km, m, cm, mm e imprimirla.
+Algoritmo
+matriz ← [["unidad","valor"]]
+Para u en [ "km","m","cm","mm" ]
+2.1. temp ← conv_distancia(valor, origen, u)
+2.2. Insertar en matriz la fila [u, temp].
+Imprimir: “Tabla rápida de DISTANCIA (desde valor origen)”.
+3.1. Para cada fila (saltando encabezado) imprimir unidad: valor.
+Regresar matriz.
+
+3) conv_temperatura(valor, origen, destino)
+Objetivo: convertir temperaturas pasando por °C.
+Algoritmo
+Llevar a °C
+1.1. Si origen = "C" → c ← valor
+1.2. Si origen = "F" → c ← (valor − 32) * 5/9
+1.3. Si origen = "K" → c ← valor − 273.15
+1.4. En otro caso: mostrar “unidad origen no reconocida” y regresar None.
+De °C a destino
+2.1. Si destino = "C" → regresar c
+2.2. Si destino = "F" → regresar c*9/5 + 32
+2.3. Si destino = "K" → regresar c + 273.15
+2.4. En otro caso: mostrar “unidad destino no reconocida” y regresar None.
+
+4) tabla_temperatura(valor, origen)
+Objetivo: construir matriz con conversiones a C, F, K e imprimirla.
+Algoritmo
+matriz ← [["unidad","valor"]]
+Insertar filas:
+2.1. ["C", conv_temperatura(valor, origen, "C")]
+2.2. ["F", conv_temperatura(valor, origen, "F")]
+2.3. ["K", conv_temperatura(valor, origen, "K")]
+Imprimir: “Tabla rápida de TEMPERATURA (desde valor origen)”.
+3.1. Para cada fila (sin encabezado) imprimir unidad: valor.
+Regresar matriz.
+
+5) pedir_valor()
+Algoritmo
+Mostrar “Ingresa un valor: ”
+Leer valor (real).
+Regresar valor.
+
+6) pedir_unidad_dist()
+Algoritmo
+Mostrar “Ingresa unidad de distancia (km/m/cm/mm): ”
+Leer u.
+Si u ∈ {km,m,cm,mm} → regresar u.
+En otro caso: mostrar “unidad no reconocida” y regresar None.
+
+7) pedir_unidad_temp()
+Algoritmo
+Mostrar “Ingresa unidad de temperatura (C/F/K): ”
+Leer u.
+Si u ∈ {C,F,K} → regresar u.
+En otro caso: mostrar “unidad no reconocida” y regresar None.
