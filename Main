@@ -1,6 +1,7 @@
 from Calc_Avanzado import calc_A
 from Calculadora_Creativas import  calc_creativas
 from Calculadora_Digital import calc_digital
+from Calculadora_Fisica import fisicas
 
 def menu_principal():
     print("\n")
@@ -136,7 +137,16 @@ def main():
                 else:
                     print("Opción no válida. Intente de nuevo.")
         elif opcion == 4:
-
+             if hasattr(Fisicas, "main"):
+                    Fisicas.main()
+            elif hasattr(Fisicas, "calculadora_fisica"):
+                    Fisicas.calculadora_fisica()
+            elif hasattr(Fisicas, "menu"):
+                    Fisicas.menu()
+                    input("Presione Enter para regresar...")
+            else:
+                    print("El módulo 'Fisicas' no expone main(), calculadora_fisica() ni menu().")
+                    input("Presione Enter para regresar...")
         elif opcion == 5:
             print("Saliendo del programa. ¡Hasta luego!")
             break
