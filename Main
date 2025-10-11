@@ -7,9 +7,9 @@ def menu_principal():
     print("\n")
     print("======== MENÚ PRINCIPAL ========")
     print("1. Calculadora Numérico Avanzado")
-    print("2. Calculadora Física")
+    print("2. Calculadora Creativa")
     print("3. Calculadora Digital")
-    print("4. Calculadora Creativa")
+    print("4. Calculadora Fisica")
     print("5. Salir")
 
 def main():
@@ -137,15 +137,15 @@ def main():
                 else:
                     print("Opción no válida. Intente de nuevo.")
         elif opcion == 4:
-                if hasattr(Fisicas, "main"):
-                    Fisicas.main()
-                elif hasattr(Fisicas, "calculadora_fisica"):
-                    Fisicas.calculadora_fisica()
-                elif hasattr(Fisicas, "menu"):
-                    Fisicas.menu()
+                if hasattr(fisicas, "main"):
+                    fisicas.main()
+                elif hasattr(fisicas, "calculadora_fisica"):
+                    fisicas.calculadora_fisica()
+                elif hasattr(fisicas, "menu"):
+                    fisicas.menu()
                     input("Presione Enter para regresar...")
                 else:
-                    print("El módulo 'Fisicas' no expone main(), calculadora_fisica() ni menu().")
+                    print("El módulo 'fisicas' no expone main(), calculadora_fisica() ni menu().")
                     input("Presione Enter para regresar...")
         elif opcion == 5:
             print("Saliendo del programa. ¡Hasta luego!")
