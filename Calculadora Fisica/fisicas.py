@@ -1,4 +1,3 @@
-
 def menu():
     print("=== CONVERSOR ===")
     print("Unidades de DISTANCIA: km, m, cm, mm")
@@ -41,11 +40,23 @@ def conv_distancia(valor, origen, destino):
     return resultado
 
 def tabla_distancia(valor, origen):
+    """
+    MISMO NOMBRE y MISMO USO, pero ahora:
+    - construye y devuelve una MATRIZ (lista de listas) con encabezado
+    - imprime la tabla como antes para no romper tu flujo actual
+    """
+    matriz = [["unidad", "valor"]]
+    matriz.append(["km", conv_distancia(valor, origen, 'km')])
+    matriz.append(["m",  conv_distancia(valor, origen, 'm')])
+    matriz.append(["cm", conv_distancia(valor, origen, 'cm')])
+    matriz.append(["mm", conv_distancia(valor, origen, 'mm')])
+
+    # Impresión igual que antes (pero ordenadita)
     print("\nTabla rápida de DISTANCIA (desde", valor, origen, ")")
-    print("km:", conv_distancia(valor, origen, 'km'))
-    print(" m:", conv_distancia(valor, origen, 'm'))
-    print("cm:", conv_distancia(valor, origen, 'cm'))
-    print("mm:", conv_distancia(valor, origen, 'mm'))
+    for fila in matriz[1:]:
+        # fila = ["unidad","valor"]
+        print(f"{fila[0]}: {fila[1]}")
+    return matriz
 
 
 def conv_temperatura(valor, origen, destino):
@@ -70,10 +81,20 @@ def conv_temperatura(valor, origen, destino):
         return None
 
 def tabla_temperatura(valor, origen):
+    """
+    MISMO NOMBRE y MISMO USO, pero ahora:
+    - construye y devuelve una MATRIZ (lista de listas) con encabezado
+    - imprime la tabla como antes para no romper tu flujo actual
+    """
+    matriz = [["unidad", "valor"]]
+    matriz.append(["C", conv_temperatura(valor, origen, 'C')])
+    matriz.append(["F", conv_temperatura(valor, origen, 'F')])
+    matriz.append(["K", conv_temperatura(valor, origen, 'K')])
+
     print("\nTabla rápida de TEMPERATURA (desde", valor, origen, ")")
-    print("C:", conv_temperatura(valor, origen, 'C'))
-    print("F:", conv_temperatura(valor, origen, 'F'))
-    print("K:", conv_temperatura(valor, origen, 'K'))
+    for fila in matriz[1:]:
+        print(f"{fila[0]}: {fila[1]}")
+    return matriz
 
 
 
@@ -101,17 +122,13 @@ def pedir_unidad_temp():
 
 def pruebas(op):
     if op == 1:
-        
         print(conv_distancia(2500, 'm', 'cm'))
     elif op == 2:
-       
-        tabla_distancia(1.75, 'km')
+        _ = tabla_distancia(1.75, 'km')
     elif op == 3:
-        
         print(conv_temperatura(25, 'C', 'F'))
     elif op == 4:
-        
-        tabla_temperatura(300, 'K')
+        _ = tabla_temperatura(300, 'K')
     else:
         print("No se pudo realizar la consulta. Intenta de nuevo")
 
@@ -140,7 +157,7 @@ def main():
             u1 = pedir_unidad_dist()
             while u1 is None:
                 u1 = pedir_unidad_dist()
-            tabla_distancia(valor, u1)
+            _ = tabla_distancia(valor, u1)  
 
         elif op == 3:
             print("Conversión de temperatura (C, F, K)")
@@ -161,7 +178,7 @@ def main():
             u1 = pedir_unidad_temp()
             while u1 is None:
                 u1 = pedir_unidad_temp()
-            tabla_temperatura(valor, u1)
+            _ = tabla_temperatura(valor, u1)  # imprime y devuelve matriz
 
         elif op == 5:
             print("Pruebas con valores estándar")
@@ -171,9 +188,10 @@ def main():
 
         elif op == 6:
             print("Nos vemos, mi inge")
-            break
+            return
 
         else:
             print("Opción inválida")
 
-main()
+if __name__ == "__main__":
+    main()
