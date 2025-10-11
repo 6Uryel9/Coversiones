@@ -1,6 +1,6 @@
 from Calc_Avanzado import calc_A
 from Calculadora_Creativas import  calc_creativas
-from Calculadora Digital import Calculadoradigital
+from Calculadora Digital import calc_digital
 
 def menu_principal():
     print("\n")
