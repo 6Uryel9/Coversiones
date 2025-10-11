@@ -1,3 +1,5 @@
+Introducción:
+
 Este proyecto en Python es una calculadora digital de conversiones pensada para trabajar con unidades de almacenamiento y de velocidad de transmisión de datos.
 Su propósito es brindar una herramienta fácil de usar, que permita convertir valores entre Bytes, Kilobytes, Megabytes y Gigabytes, así como entre bits por segundo (bps) y Megabits por segundo (Mbps).
 El funcionamiento es simple: el programa muestra un menú interactivo en el que el usuario elige la conversión que desea realizar. Después, se ingresa el valor numérico y la dirección de la conversión (por ejemplo, de Bytes a Kilobytes o viceversa). 
