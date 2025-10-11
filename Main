@@ -1,7 +1,8 @@
 from Calc_Avanzado import calc_A
 
 def menu_principal():
-    print("=== MENÚ PRINCIPAL ===")
+    print("\n")
+    print("======== MENÚ PRINCIPAL ========")
     print("1. Calculadora Numérico Avanzado")
     print("2. Calculadora Física")
     print("3. Calculadora Digital")
@@ -12,10 +13,11 @@ def main():
     while True:
         menu_principal()
         opcion = int(input("Seleccione una opción (1-5): "))
+        print("\n")
         if opcion == 1:
             while True:
                 calc_A.menu()
-                opcion = int(input("Seleccione una opción (1-9): "))
+                opcion = int(input("Seleccione una opción (1-10): "))
                 if opcion == 1:
                     while True:
                         n = int(input("Ingrese un número decimal: "))
@@ -83,61 +85,8 @@ def main():
         elif opcion == 5:
             print("Saliendo del programa. ¡Hasta luego!")
             break
-        elif opcion == 6: '''salir al menu principal de principal.py'''
-        
         else:
             print("Opción no válida. Intente de nuevo.")
-
-        elif opcion == 3:
-                    print("\n=== Calculadora Digital ===")
-                    while True:
-                        print("\n1. Bytes ↔ Kilobytes")
-                        print("2. Kilobytes ↔ Megabytes")
-                        print("3. Megabytes ↔ Gigabytes")
-                        print("4. bps ↔ Mbps")
-                        print("5. Ejecutar pruebas automáticas")
-                        print("6. Regresar al menú principal")
-        
-                        op_digital = int(input("Seleccione una opción (1-6): "))
-        
-                        if 1 <= op_digital <= 4:
-                            i = op_digital - 1  
-        
-                            u1 = calc_digital.unidades1[i]
-                            u2 = calc_digital.unidades2[i]
-                            f = calc_digital.factores[i]
-        
-                            print(f"\nHas elegido convertir entre {u1} y {u2}")
-                            print("1.", u1, "→", u2)
-                            print("2.", u2, "→", u1)
-        
-                            direccion = int(input("Selecciona el sentido de conversión: "))
-        
-                            if direccion == 1:
-                                valor = float(input(f"Ingrese el número de {u1}: "))
-                                resultado = valor / f
-                                print(f"\nResultado: {valor} {u1} equivalen a {resultado} {u2}\n")
-        
-                            elif direccion == 2:
-                                valor = float(input(f"Ingrese el número de {u2}: "))
-                                resultado = valor * f
-                                print(f"\nResultado: {valor} {u2} equivalen a {resultado} {u1}\n")
-        
-                            else:
-                                print("Opción inválida.")
-        
-                            repetir = input("¿Desea hacer otra conversión digital? (s/n): ").lower()
-                            if repetir != "s":
-                                break
-        
-                        elif op_digital == 5:
-                            calc_digital.pruebas_codigo()
-        
-                        elif op_digital == 6:
-                            print("Regresando al menú principal...\n")
-                            break
-        
-                        else:
-                            print("Opción no válida. Intente de nuevo.")
+        input("Presione Enter para volver al menú...")
 
 main()
