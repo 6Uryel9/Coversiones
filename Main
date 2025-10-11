@@ -137,14 +137,14 @@ def main():
                 else:
                     print("Opción no válida. Intente de nuevo.")
         elif opcion == 4:
-             if hasattr(Fisicas, "main"):
+                if hasattr(Fisicas, "main"):
                     Fisicas.main()
-            elif hasattr(Fisicas, "calculadora_fisica"):
+                elif hasattr(Fisicas, "calculadora_fisica"):
                     Fisicas.calculadora_fisica()
-            elif hasattr(Fisicas, "menu"):
+                elif hasattr(Fisicas, "menu"):
                     Fisicas.menu()
                     input("Presione Enter para regresar...")
-            else:
+                else:
                     print("El módulo 'Fisicas' no expone main(), calculadora_fisica() ni menu().")
                     input("Presione Enter para regresar...")
         elif opcion == 5:
