@@ -1,3 +1,4 @@
+#Es el menu donde eliges que accion quieres hacer 
 def menu():
     print("Conversiones fisicas")
     print("Unidades de DISTANCIA: km, m, cm, mm")
@@ -9,7 +10,7 @@ def menu():
     print("5. Pruebas con valores estándar")
     print("6. Salir")
 
-
+#Es el conversor de distancia, eliges num y a que distancia la quieres convertir, usa tu valor y lo multiplica por tu factor de origen para despues divir el resultado de eso entre el factor de destino que elegiste 
 def conv_distancia(valor, origen, destino):
     if origen == 'km':
         factor_origen = 1000.0
@@ -38,13 +39,9 @@ def conv_distancia(valor, origen, destino):
     metros = valor * factor_origen
     resultado = metros / factor_destino
     return resultado
-
+#te hace una tabla con las diferentes distancias que hay, le das un valor y te la transforma en las distancias que tiene el programa.
 def tabla_distancia(valor, origen):
-    """
-    MISMO NOMBRE y MISMO USO, pero ahora:
-    - construye y devuelve una MATRIZ (lista de listas) con encabezado
-    - imprime la tabla como antes para no romper tu flujo actual
-    """
+
     matriz = [["unidad", "valor"]]
     matriz.append(["km", conv_distancia(valor, origen, 'km')])
     matriz.append(["m",  conv_distancia(valor, origen, 'm')])
@@ -56,7 +53,7 @@ def tabla_distancia(valor, origen):
         print(f"{fila[0]}: {fila[1]}")
     return matriz
 
-
+# similar al converson de distancia pero este hace la operacion en base a la temperatura de destino que elijas.
 def conv_temperatura(valor, origen, destino):
     if origen == 'C':
         c = valor
@@ -77,13 +74,8 @@ def conv_temperatura(valor, origen, destino):
     else:
         print("Unidad destino no reconocida (usa C, F, K)")
         return None
-
+# te hace una tabla con el valor que le proporciones a las diferentes temperaturas que tiene el programa 
 def tabla_temperatura(valor, origen):
-    """
-    MISMO NOMBRE y MISMO USO, pero ahora:
-    - construye y devuelve una MATRIZ (lista de listas) con encabezado
-    - imprime la tabla como antes para no romper tu flujo actual
-    """
     matriz = [["unidad", "valor"]]
     matriz.append(["C", conv_temperatura(valor, origen, 'C')])
     matriz.append(["F", conv_temperatura(valor, origen, 'F')])
@@ -193,4 +185,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
