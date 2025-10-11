@@ -1,5 +1,5 @@
 def menu():
-    print("=== CONVERSOR ===")
+    print("Conversiones fisicas")
     print("Unidades de DISTANCIA: km, m, cm, mm")
     print("Unidades de TEMPERATURA: C, F, K")
     print("1. Convertir distancia")
@@ -51,10 +51,8 @@ def tabla_distancia(valor, origen):
     matriz.append(["cm", conv_distancia(valor, origen, 'cm')])
     matriz.append(["mm", conv_distancia(valor, origen, 'mm')])
 
-    # Impresión igual que antes (pero ordenadita)
     print("\nTabla rápida de DISTANCIA (desde", valor, origen, ")")
     for fila in matriz[1:]:
-        # fila = ["unidad","valor"]
         print(f"{fila[0]}: {fila[1]}")
     return matriz
 
@@ -178,7 +176,7 @@ def main():
             u1 = pedir_unidad_temp()
             while u1 is None:
                 u1 = pedir_unidad_temp()
-            _ = tabla_temperatura(valor, u1)  # imprime y devuelve matriz
+            _ = tabla_temperatura(valor, u1)
 
         elif op == 5:
             print("Pruebas con valores estándar")
@@ -195,3 +193,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
