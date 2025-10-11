@@ -7,9 +7,9 @@ def menu_principal():
     print("\n")
     print("======== MENÚ PRINCIPAL ========")
     print("1. Calculadora Numérico Avanzado")
-    print("2. Calculadora Creativa")
+    print("2. Calculadora Fisica")
     print("3. Calculadora Digital")
-    print("4. Calculadora Fisica")
+    print("4. Calculadora Creativa")
     print("5. Salir")
 
 def main():
