@@ -8,21 +8,24 @@ Con base en ello, consideramos que existe la oportunidad de integrar estas compe
 # Cómo funciona
 La calculadora contará con módulos temáticos que permitirán realizar diversas conversiones:
 
-•	Módulo 1: Numérico avanzado
-o	Decimal a binario/Octal/Hexadecimal
-o	Decimal a números romanos
+•	Módulo 1: Numérico avanzado.
+- Decimal a binario/Octal/Hexadecimal
+- Decimal a números romanos
 
-•	Módulo 2: Físico/Científico
-o	Longitud: metros/kilómetros/millas/años luz
-o	Temperatura: °C/K/°F/Rankine
+•	Módulo 2: Físico
+- Longitud: metros/kilómetros/millas/años luz
+- Temperatura: °C/K/°F/Rankine
 
-•	Módulo 3: Digital/Datos
-o	Byte a Kilobyte/Kilobyte a Megabyte/Megabyte a Gigabyte
-o	Bytes por segundo/Megabyte por segundo
+•	Módulo 3: Digital
+- Byte a Kilobyte/Kilobyte a Megabyte/Megabyte a Gigabyte
+- Bytes por segundo/Megabyte por segundo
 
-•	 Módulo 4: Curioso/Entretenido
-o	Cocina internacional: gramos/onzas/tazas/cucharadas
-o	Escalas creativas: energía (J)/barras de chocolate/calorías/bombillas
+•	 Módulo 4: Creativo
+- Altura en Torres de Libros
+- Energía a barras de chocolate
+- Peso en gatos y gatitos
+- Volumen en propiedades de un agujero negro
+- Distancia en Animales marinos
 
 De esta manera, el proyecto busca fomentar la experimentación, el pensamiento lógico, la cultura científica y tecnológica, así como la curiosidad del usuario.
 
