@@ -18,4 +18,5 @@ Fórmulas:
   •	Octal a Decimal: Similar a la conversión de binario a decimal, pero en este caso cada dígito octal se multiplica por 8 elevado a la posición correspondiente. El proceso recorre los dígitos octales de derecha a izquierda, sumando los resultados.
   
   •	Hexadecimal a Decimal: Para convertir un número hexadecimal a decimal, se multiplica cada dígito hexadecimal por 16 elevado a su posición correspondiente. Los dígitos hexadecimales (0-9, A-F) se convierten en sus valores decimales y el proceso acumula los resultados.
+  
   •	Romano a Decimal: La conversión de números romanos a decimal se realiza sumando los valores de los símbolos romanos. Si un símbolo romano de menor valor precede a uno de mayor valor, su valor se resta del mayor. El proceso recorre la cadena de símbolos romanos y calcula su equivalente decimal.
