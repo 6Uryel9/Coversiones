@@ -87,11 +87,11 @@ def tabla_temperatura(valor, origen):
     return matriz
 
 
-
+#te pide el valor en el que se va a convertir dependiendo de que funcion decidas usar.
 def pedir_valor():
     valor = float(input("Ingresa un valor: "))
     return valor
-
+#sirve para definir que unidad de medida vas a usar dependiendo de que letras escribas 
 def pedir_unidad_dist():
     unidad = input("Ingresa una UNIDAD DE DISTANCIA (km/m/cm/mm): ")
     if unidad == 'km' or unidad == 'm' or unidad == 'cm' or unidad == 'mm':
@@ -99,7 +99,7 @@ def pedir_unidad_dist():
     else:
         print("Unidad no reconocida (usa km, m, cm, mm)")
         return None
-
+#sirve para definir que unidad de temperatura vas a usar dependiendo que letras escribas
 def pedir_unidad_temp():
     unidad = input("Ingresa una UNIDAD DE TEMPERATURA (C/F/K): ")
     if unidad == 'C' or unidad == 'F' or unidad == 'K':
@@ -109,7 +109,7 @@ def pedir_unidad_temp():
         return None
 
 
-
+#Son los casos de prueba que se cargan directos para poder revisar la funcionalidad de el programa de manera rapida
 def pruebas(op):
     if op == 1:
         print(conv_distancia(2500, 'm', 'cm'))
@@ -121,8 +121,7 @@ def pruebas(op):
         _ = tabla_temperatura(300, 'K')
     else:
         print("No se pudo realizar la consulta. Intenta de nuevo")
-
-
+#donde hace el proceso de la accion elegida en el menu 
 def main():
     while True:
         menu()
@@ -182,10 +181,10 @@ def main():
 
         else:
             print("Opción inválida")
-
+#entrada compatible con el main general
 def calculadora_fisica():
     return main()
-
+#sirve para ejecutar los mismos pasos de el main cuando esta fuera de el archivo 
 def dispatch(op):
     """
     Opcional: si en algún momento solo llamas fisicas.menu()
@@ -245,6 +244,7 @@ def dispatch(op):
 
     else:
         print("Opción inválida")
+
 
 
 
