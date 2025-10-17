@@ -26,17 +26,15 @@ Casos de prueba:
 8. Romano a Decimal:
    Entrada: XXXIX
    Salida esperada: 39'''
-
+import os
 def casos_de_prueba():
-    print("Casos de Prueba")
-    print("1. Decimal a Binario (10):", decimal_a_binario(10), "-> esperado: 1010")
-    print("2. Binario a Decimal (1010):", binario_a_decimal("1010"), "-> esperado: 10")
-    print("3. Decimal a Octal (10):", decimal_a_octal(10), "-> esperado: 12")
-    print("4. Octal a Decimal (12):", octal_a_decimal("12"), "-> esperado: 10")
-    print("5. Decimal a Hexadecimal (255):", decimal_a_hexadecimal(255), "-> esperado: FF")
-    print("6. Hexadecimal a Decimal (FF):", hexadecimal_a_decimal("FF"), "-> esperado: 255")
-    print("7. Decimal a Romano (1994):", decimal_a_romano(1994), "-> esperado: MCMXCIV")
-    print("8. Romano a Decimal (XXXIX):", romano_a_decimal("XXXIX"), "-> esperado: 39")
+    ruta = os.path.join("Calculadora_Numerico_Avanzado", "algoritmo.txt")
+    algoritmo = open(ruta, "r")
+    algoritmo.seek(0)
+    contenido = algoritmo.read()
+    print(contenido)
+    algoritmo.close()
+    
 
 
 '''Convierte un número decimal (n) a su equivalente en binario, retornando una 
@@ -137,7 +135,6 @@ def romano_a_decimal(r):
             decimal += valores[r[i]]
             i += 1
     return decimal
-
 
 def menu():
     print("=== MENÚ CALCULADORA NUMÉRICO AVANZADO ===")
