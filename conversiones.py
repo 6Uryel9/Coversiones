@@ -86,15 +86,24 @@ def main():
                     print("Opción no válida. Intente de nuevo.")
                 input("Presione Enter para volver al menú...")
         elif opcion == 2:
-            if hasattr(fisicas, "menu"):
-                fisicas.menu()
-            elif hasattr(fisicas, "calculadora_fisica"):
-                fisicas.calculadora_fisica()
-            elif hasattr(fisicas, "main"):
+            if hasattr(fisicas, "main") and callable(fisicas.main):
                 fisicas.main()
-            else:
-                print("El módulo 'fisicas' no expone main(), calculadora_fisica() ni menu().")
-            input("Presione Enter para regresar...")
+            elif hasattr(fisicas, "calculadora_fisica") and callable(fisicas.calculadora_fisica):
+                fisicas.calculadora_fisica()
+            elif hasattr(fisicas, "menu") and callable(fisicas.menu):
+            # Fallback: si solo hay menu(), imprime y luego tú lees y despachas
+                fisicas.menu()
+            try:
+                sub = int(input("Elige opción de Físicas: "))
+                if hasattr(fisicas, "dispatch") and callable(fisicas.dispatch):
+                    fisicas.dispatch(sub)
+                else:
+                    print("El módulo solo expone menu(); agrega main()/dispatch() para interactuar.")
+            except ValueError:
+                print("Opción inválida.")
+        else:
+            print("El módulo 'fisicas' no expone main(), calculadora_fisica() ni menu().")
+
 
         
         elif opcion == 3:
