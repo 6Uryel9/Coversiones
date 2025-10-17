@@ -29,6 +29,33 @@ La calculadora contará con módulos temáticos que permitirán realizar diversa
 
 De esta manera, el proyecto busca fomentar la experimentación, el pensamiento lógico, la cultura científica y tecnológica, así como la curiosidad del usuario.
 
+ALGORITMO GENERAL del Proyecto:
+Inicio
+1.	Mostrar menú principal con las siguientes opciones:
+  o	Módulo 1: Numérico avanzado
+  o	Módulo 2: Físico
+  o	Módulo 3: Digital
+  o	Módulo 4: Creativo
+  o	Ver historial
+  o	Salir
+2.  Solicitar una opción de participación al usuario.
+3.	Leer la opción seleccionada por el usuario.
+4.  Mientras opción ≠ "Salir" hacer
+        Si opción = "Numérico avanzado" entonces
+            Ejecutar módulo numérico
+        Si opción = "Físico" entonces
+            Ejecutar módulo físico
+        Si opción = "Digital" entonces
+            Ejecutar módulo digital
+        Si opción = "Creativo" entonces
+            Ejecutar módulo creativo
+        Si opción = "Historial" entonces
+            Mostrar historial
+        FinSi
+        Mostrar menú principal
+        Leer nueva opción
+    FinMientras
+
 # Referencias
 
 Ziatdinov, R., & Valles Jr., J. R. (2022). Synthesis of modeling, visualization, and programming in GeoGebra as an effective approach for teaching and learning STEM topics. Mathematics, 10(3), 398. https://doi.org/10.3390/math10030398
