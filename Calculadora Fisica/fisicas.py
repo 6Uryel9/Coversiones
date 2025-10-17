@@ -183,7 +183,70 @@ def main():
         else:
             print("Opción inválida")
 
-if __name__ == "__main__":
-    main()
+
+def calculadora_fisica():
+    return main()
+
+def dispatch(op):
+    """
+    Opcional: si en algún momento solo llamas fisicas.menu()
+    y luego quieres que el main grande lea 'op' y despache aquí.
+    """
+    if op == 1:
+        print("Conversión de distancia (km, m, cm, mm)")
+        valor = pedir_valor()
+        u1 = pedir_unidad_dist()
+        while u1 is None:
+            u1 = pedir_unidad_dist()
+        u2 = pedir_unidad_dist()
+        while u2 is None:
+            u2 = pedir_unidad_dist()
+        r = conv_distancia(valor, u1, u2)
+        if r is not None:
+            print(valor, u1, "=", r, u2)
+
+    elif op == 2:
+        print("Tabla rápida (distancia)")
+        valor = pedir_valor()
+        u1 = pedir_unidad_dist()
+        while u1 is None:
+            u1 = pedir_unidad_dist()
+        _ = tabla_distancia(valor, u1)
+
+    elif op == 3:
+        print("Conversión de temperatura (C, F, K)")
+        valor = pedir_valor()
+        u1 = pedir_unidad_temp()
+        while u1 is None:
+            u1 = pedir_unidad_temp()
+        u2 = pedir_unidad_temp()
+        while u2 is None:
+            u2 = pedir_unidad_temp()
+        r = conv_temperatura(valor, u1, u2)
+        if r is not None:
+            print(valor, u1, "=", r, u2)
+
+    elif op == 4:
+        print("Tabla rápida (temperatura)")
+        valor = pedir_valor()
+        u1 = pedir_unidad_temp()
+        while u1 is None:
+            u1 = pedir_unidad_temp()
+        _ = tabla_temperatura(valor, u1)
+
+    elif op == 5:
+        print("Pruebas con valores estándar")
+        print("1) Distancia puntual | 2) Distancia tabla | 3) Temp puntual | 4) Temp tabla")
+        sub = int(input("Elige prueba: "))
+        pruebas(sub)
+
+    elif op == 6:
+        print("Nos vemos, mi inge")
+        return
+
+    else:
+        print("Opción inválida")
+
+
 
 
