@@ -91,7 +91,6 @@ def main():
             elif hasattr(fisicas, "calculadora_fisica") and callable(fisicas.calculadora_fisica):
                 fisicas.calculadora_fisica()
             elif hasattr(fisicas, "menu") and callable(fisicas.menu):
-            # Fallback: si solo hay menu(), imprime y luego tú lees y despachas
                 fisicas.menu()
             try:
                 sub = int(input("Elige opción de Físicas: "))
