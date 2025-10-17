@@ -31,7 +31,7 @@ De esta manera, el proyecto busca fomentar la experimentación, el pensamiento l
 
 # Algoritmo General del Proyecto:
 
-1.	Mostrar menú principal con las siguientes opciones:
+1.  Mostrar menú principal con las siguientes opciones:
 - Módulo 1: Numérico avanzado
 - Módulo 2: Físico
 - Módulo 3: Digital
@@ -39,22 +39,22 @@ De esta manera, el proyecto busca fomentar la experimentación, el pensamiento l
 - Ver historial
 - Salir
 2.  Solicitar una opción de participación al usuario.
-3.	Leer la opción seleccionada por el usuario.
-4.  Mientras opción ≠ "Salir" hacer
-        - Si opción = "Numérico avanzado" entonces
-            - Ejecutar módulo numérico
-        - Si opción = "Físico" entonces
-            - Ejecutar módulo físico
-        - Si opción = "Digital" entonces
-            - Ejecutar módulo digital
-        - Si opción = "Creativo" entonces
-            - Ejecutar módulo creativo
-        - Si opción = "Historial" entonces
-            - Mostrar historial
-        - FinSi
-        - Mostrar menú principal
-        - Leer nueva opción
-    - FinMientras
+3.  Leer la opción seleccionada por el usuario.
+4.  Mientras opción ≠ "Salir" hacer: 
+- Si opción = "Numérico avanzado" entonces
+-         Ejecutar módulo numérico
+- Si opción = "Físico" entonces
+-          Ejecutar módulo físico
+- Si opción = "Digital" entonces
+-         Ejecutar módulo digital
+- Si opción = "Creativo" entonces
+-         Ejecutar módulo creativo
+- Si opción = "Historial" entonces
+-         Mostrar historial
+- FinSi
+- Mostrar menú principal
+- Leer nueva opción
+- FinMientras
 
 # Referencias
 
