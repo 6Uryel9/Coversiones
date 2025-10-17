@@ -19,66 +19,66 @@ def main():
         print("\n")
         if opcion == 1:
             while True:
-                Calculadora_Numerico_Avanzado.menu()
+                Calculadora_NumericoAvanzado.menu()
                 opcion = int(input("Seleccione una opción (1-10): "))
                 if opcion == 1:
                     while True:
                         n = int(input("Ingrese un número decimal: "))
-                        print(f"Binario: {Calculadora_Numerico_Avanzado.decimal_a_binario(n)}")
+                        print(f"Binario: {Calculadora_NumericoAvanzado.decimal_a_binario(n)}")
                         repetir = input("¿Desea hacer otra conversión Decimal a Binario? (s/n): ").lower()
-                        if repetir != "s":
+                        if repetir != "s":  
                             break
                 elif opcion == 2:
                     while True:
                         b = input("Ingrese un número binario: ")
-                        print(f"Decimal: {Calculadora_Numerico_Avanzado.binario_a_decimal(b)}")
+                        print(f"Decimal: {Calculadora_NumericoAvanzado.binario_a_decimal(b)}")
                         repetir = input("¿Desea hacer otra conversión Binario a Decimal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 3:
                     while True:
                         n = int(input("Ingrese un número decimal: "))
-                        print(f"Octal: {Calculadora_Numerico_Avanzado.decimal_a_octal(n)}")
+                        print(f"Octal: {Calculadora_NumericoAvanzado.decimal_a_octal(n)}")
                         repetir = input("¿Desea hacer otra conversión Decimal a Octal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 4:
                     while True:
                         o = input("Ingrese un número octal: ")
-                        print(f"Decimal: {Calculadora_Numerico_Avanzado.octal_a_decimal(o)}")
+                        print(f"Decimal: {Calculadora_NumericoAvanzado.octal_a_decimal(o)}")
                         repetir = input("¿Desea hacer otra conversión Octal a Decimal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 5:
                     while True:
                         n = int(input("Ingrese un número decimal: "))
-                        print(f"Hexadecimal: {Calculadora_Numerico_Avanzado.decimal_a_hexadecimal(n)}")
+                        print(f"Hexadecimal: {Calculadora_NumericoAvanzado.decimal_a_hexadecimal(n)}")
                         repetir = input("¿Desea hacer otra conversión Decimal a Hexadecimal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 6:
                     while True:
                         h = input("Ingrese un número hexadecimal: ")
-                        print(f"Decimal: {Calculadora_Numerico_Avanzado.hexadecimal_a_decimal(h)}")
+                        print(f"Decimal: {Calculadora_NumericoAvanzado.hexadecimal_a_decimal(h)}")
                         repetir = input("¿Desea hacer otra conversión Hexadecimal a Decimal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 7:
                     while True:
                         n = int(input("Ingrese un número decimal: "))
-                        print(f"Romano: {Calculadora_Numerico_Avanzado.decimal_a_romano(n)}")
+                        print(f"Romano: {Calculadora_NumericoAvanzado.decimal_a_romano(n)}")
                         repetir = input("¿Desea hacer otra conversión Decimal a Romano? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 8:
                     while True:
                         r = input("Ingrese un número romano: ")
-                        print(f"Decimal: {Calculadora_Numerico_Avanzado.romano_a_decimal(r)}")
+                        print(f"Decimal: {Calculadora_NumericoAvanzado.romano_a_decimal(r)}")
                         repetir = input("¿Desea hacer otra conversión Romano a Decimal? (s/n): ").lower()
                         if repetir != "s":
                             break
                 elif opcion == 9:
-                    Calculadora_Numerico_Avanzado.casos_de_prueba()
+                    Calculadora_NumericoAvanzado.casos_de_prueba()
                 elif opcion == 10:
                     print("Saliendo...")
                     break
