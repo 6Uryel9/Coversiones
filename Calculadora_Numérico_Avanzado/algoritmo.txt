@@ -1,0 +1,9 @@
+Casos de Prueba
+1. Decimal a Binario (10):", decimal_a_binario(10), "-> esperado: 1010"
+2. Binario a Decimal (1010):", binario_a_decimal("1010"), "-> esperado: 10"
+3. Decimal a Octal (10):", decimal_a_octal(10), "-> esperado: 12"
+4. Octal a Decimal (12):", octal_a_decimal("12"), "-> esperado: 10"
+5. Decimal a Hexadecimal (255):", decimal_a_hexadecimal(255), "-> esperado: FF"
+6. Hexadecimal a Decimal (FF):", hexadecimal_a_decimal("FF"), "-> esperado: 255"
+7. Decimal a Romano (1994):", decimal_a_romano(1994), "-> esperado: MCMXCIV"
+8. Romano a Decimal (XXXIX):", romano_a_decimal("XXXIX"), "-> esperado: 39"
