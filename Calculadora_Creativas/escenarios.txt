@@ -1,0 +1,34 @@
+[ALTURA]
+Imagina que eres un arquitecto de librerías mágicas y tu objetivo es construir la torre más alta de libros del mundo.
+Te encuentras en una biblioteca infinita y quieres medir la altura de una torre de libros con los títulos más famosos.
+Eres un inventor que quiere apilar libros para llegar a la ventana del ático sin usar escaleras.
+Un gigante coleccionista de libros te reta a formar la torre más alta posible.
+Estás creando un mundo virtual donde los libros son como bloques de construcción.
+
+[PESO]
+Estás en un mundo donde los gatos son la moneda de cambio.
+Te encuentras en un laboratorio de biología fantástica donde los gatos pesan diferentes cantidades según su edad.
+Imagina que eres un domador de gatos gigantes y quieres medir la fuerza de tu cargamento de gatitos y gatos adultos.
+En un universo paralelo, el peso de los objetos se mide en gatitos y gatos.
+Eres un mago y cada gatito que aparece pesa distinto.
+
+[ENERGIA]
+Eres un chef científico y quieres convertir la energía de tus ingredientes en el equivalente de barras de chocolate o TNT.
+Estás en una fábrica de chocolates explosivos y necesitas saber cuántas barras producirías.
+Imagina que cada unidad de energía se puede convertir en delicias comestibles o en explosiones controladas.
+Estás en un laboratorio de física divertida donde la energía puede medirse en calorías de chocolate o en toneladas de TNT.
+Eres un inventor loco que quiere saber cuántas barras de chocolate serían necesarias para alimentar a un ejército de estudiantes o detonar un pequeño volcán.
+
+[AGUJERO]
+Imagina que eres un astrónomo que ha encontrado un volumen de materia y quieres calcular cómo sería si se convirtiera en un agujero negro.
+Estás en una simulación espacial donde los objetos pueden transformarse en agujeros negros.
+Eres un físico intergaláctico y necesitas calcular el radio y la masa de un agujero negro a partir de un volumen determinado.
+Te encuentras en un laboratorio de astrofísica creativa donde cada volumen puede colapsar en un agujero negro.
+Eres un explorador del espacio-tiempo y tu objetivo es calcular la dilatación temporal cerca de un horizonte de sucesos.
+
+[DISTANCIA]
+Estás en un acuario gigante y quieres convertir una distancia en equivalentes de animales marinos.
+Imagina que cada metro que caminas puede representarse con un animal del océano.
+Eres un biólogo marino y quieres visualizar la distancia que recorrerías como si fuera una fila de animales del océano.
+Te encuentras en un mundo donde las distancias se miden en especies marinas.
+Eres un aventurero submarino y cada tramo que nadas se traduce en animales marinos.
