@@ -108,54 +108,60 @@ def main():
         elif opcion == 3:
             print("\n=== Calculadora Digital ===")
             while True:
-                print("\n1. Bytes ↔ Kilobytes")
+                print("\n--------- MENÚ DIGITAL ---------")
+                print("1. Bytes ↔ Kilobytes")
                 print("2. Kilobytes ↔ Megabytes")
                 print("3. Megabytes ↔ Gigabytes")
                 print("4. bps ↔ Mbps")
-                print("5. Ejecutar pruebas automáticas")
-                print("6. Regresar al menú principal")
+                print("5. Mostrar tabla de conversiones (historial ordenado)")
+                print("6. Ejecutar pruebas automáticas")
+                print("7. Regresar al menú principal")
 
-                op_digital = int(input("Seleccione una opción (1-6): "))
+                op_digital = int(input("Seleccione una opción (1-7): "))
 
                 if 1 <= op_digital <= 4:
                     i = op_digital - 1  
+                    calc_digital.mostrar_tipo_conversion(i)
 
                     u1 = calc_digital.unidades1[i]
                     u2 = calc_digital.unidades2[i]
-                    f = calc_digital.factores[i]
 
                     print(f"\nHas elegido convertir entre {u1} y {u2}")
                     print("1.", u1, "→", u2)
                     print("2.", u2, "→", u1)
-
                     direccion = int(input("Selecciona el sentido de conversión: "))
 
-                    if direccion == 1:
-                        valor = float(input(f"Ingrese el número de {u1}: "))
-                        resultado = valor / f
-                        print(f"\nResultado: {valor} {u1} equivalen a {resultado} {u2}\n")
+                    valor = calc_digital.pedir_valor()
 
-                    elif direccion == 2:
-                        valor = float(input(f"Ingrese el número de {u2}: "))
-                        resultado = valor * f
-                        print(f"\nResultado: {valor} {u2} equivalen a {resultado} {u1}\n")
+                    if calc_digital.confirmacion():
+                        calc_digital.animacion_conversion(u1, u2)
+                        resultado = calc_digital.convertir(i, direccion, valor)
 
-                    else:
-                        print("Opción inválida.")
+                        if direccion == 1:
+                            print(f"\nResultado: {valor} {u1} equivalen a {resultado} {u2}\n")
+                        else:
+                            print(f"\nResultado: {valor} {u2} equivalen a {resultado} {u1}\n")
+
+                        texto = f"{u1} ↔ {u2}: {valor} -> {resultado}"
+                        calc_digital.guardar_en_archivo(texto)
 
                     repetir = input("¿Desea hacer otra conversión digital? (s/n): ").lower()
                     if repetir != "s":
                         break
 
                 elif op_digital == 5:
-                    calc_digital.pruebas_codigo()
+                    calc_digital.tabla_conversiones()
 
                 elif op_digital == 6:
+                    calc_digital.pruebas_codigo()
+
+                elif op_digital == 7:
                     print("Regresando al menú principal...\n")
                     break
 
                 else:
                     print("Opción no válida. Intente de nuevo.")
+
         elif opcion == 4:
             print("----------CONVERSIONES CREATIVAS--------------")
             while True:
