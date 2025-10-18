@@ -21,9 +21,6 @@ Relaciona un volumen dado con la masa de un agujero negro y muestra los efectos 
 - Distancia en animales marinos
 Convierte una distancia en la cantidad de animales marinos colocados uno tras otro (desde ballenas hasta rotíferos), facilitando la comprensión con imágenes mentales.
 
-- Tiempo en Recorridos Curiosos
-Comp0ara una cantidad de tiempo en varios recorridos que se podrían realizar en ese mismo periodo, incluyendo una mera distancia en pasos, entre qué ciudades se podría viajar, hasta destinos en el plano astronómico cuando se viaja a la velocidad de la luz.
-
 # Propósito
 
 Estas funciones convierten magnitudes abstractas en escenarios tangibles y narrativos, lo cual:
