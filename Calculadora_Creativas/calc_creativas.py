@@ -239,7 +239,7 @@ def pruebas(op):
     Ejecuta pruebas rápidas con valores predefinidos
     para verificar el funcionamiento de las funciones principales.
     """
-        while True:
+    while True:
         print("Tu opción es...")
         op = pedir_valor()
         while op is None:
