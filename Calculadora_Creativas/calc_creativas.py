@@ -235,7 +235,7 @@ def distancia_marina(distancia, unidad):
     for nombre, cantidad in resultado.items():
         print(f"{nombre}: {cantidad}")
 
-def pruebas(op):
+def pruebas():
     """
     Ejecuta pruebas rápidas con valores predefinidos
     para verificar el funcionamiento de las funciones principales.
