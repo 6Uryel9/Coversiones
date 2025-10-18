@@ -314,6 +314,7 @@ def escenario_aleatorio(categoria):
     """
     bloques = {}
     try:
+        ruta = os.path.join("Calculadora_Creativas", "escenarios.txt")
         with open("escenarios.txt", "r", encoding="utf-8") as f:
             key = None
             for line in f:
