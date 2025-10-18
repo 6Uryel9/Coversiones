@@ -100,8 +100,8 @@ def main():
                     print("El módulo solo expone menu(); agrega main()/dispatch() para interactuar.")
             except ValueError:
                 print("Opción inválida.")
-        else:
-            print("El módulo 'fisicas' no expone main(), calculadora_fisica() ni menu().")
+            else:
+                print("El módulo 'fisicas' no expone main(), calculadora_fisica() ni menu().")
 
 
         
