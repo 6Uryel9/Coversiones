@@ -1,5 +1,6 @@
 import math
 import random
+import os
 
 # Constantes físicas
 GRAVEDAD = 6.6674 * 10**-11   # Constante de gravitación universal (N·m²/kg²)
@@ -314,8 +315,9 @@ def escenario_aleatorio(categoria):
     """
     bloques = {}
     try:
-        ruta = os.path.join("Calculadora_Creativas", "escenarios.txt")
-        with open("escenarios.txt", "r", encoding="utf-8") as f:
+        ruta = os.path.join(os.path.dirname(__file__), "escenarios.txt")
+        with open(ruta, "r", encoding="utf-8") as f:
+
             key = None
             for line in f:
                 line = line.strip()
