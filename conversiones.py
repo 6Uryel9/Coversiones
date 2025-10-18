@@ -163,26 +163,35 @@ def main():
                     print("Opción no válida. Intente de nuevo.")
 
         elif opcion == 4:
-            print("----------CONVERSIONES CREATIVAS--------------")
+            print("=" * 70)
+            print("CONVERSIONES CREATIVAS")
+            print("=" * 70)
+        
             while True:
+                print("\n" + "=" * 70)
                 calc_creativas.menu()  # Mostrar menú principal
                 opcion = int(input("Elige una opción: "))
         
                 # --- Opción 1: Altura en equivalentes de libros ---
                 if opcion == 1:
                     while True:
-                        print("----------TORRES DE LIBROS----------")
+                        print("\n" + "=" * 70)
+                        print("TORRES DE LIBROS")
+                        print("=" * 70)
+                        print(calc_creativas.escenario_aleatorio("ALTURA"))
                         print("A cuántos libros equivalen:")
                         altura = calc_creativas.pedir_valor()
                         while altura is None:
-                            altura = pedir_valor()
+                            altura = calc_creativas.pedir_valor()
         
                         unidades = ['km', 'm', 'cm', 'mm', 'in', 'ft', 'yd', 'mi']
                         unidad = calc_creativas.pedir_unidad(unidades)
                         while unidad is None:
                             unidad = calc_creativas.pedir_unidad(unidades)
         
+                        print("=" * 70)
                         calc_creativas.altura_libros(altura, unidad)
+                        print("=" * 70)
         
                         repetir = input("¿Desea hacer otra conversión de altura? (s/n): ").lower()
                         if repetir != "s":
@@ -191,7 +200,10 @@ def main():
                 # --- Opción 2: Peso en gatos/gatitos ---
                 elif opcion == 2:
                     while True:
-                        print("----------PESO EN GATOS Y GATITOS----------")
+                        print("\n" + "=" * 70)
+                        print("PESO EN GATOS Y GATITOS")
+                        print("=" * 70)
+                        print(calc_creativas.escenario_aleatorio("PESO"))
                         print("A cuántos gatos y gatitos equivale:")
                         peso = calc_creativas.pedir_valor()
                         while peso is None:
@@ -202,7 +214,9 @@ def main():
                         while unidad is None:
                             unidad = calc_creativas.pedir_unidad(unidades)
         
+                        print("=" * 70)
                         calc_creativas.peso_gatitos(peso, unidad)
+                        print("=" * 70)
         
                         repetir = input("¿Desea hacer otra conversión de peso? (s/n): ").lower()
                         if repetir != "s":
@@ -211,7 +225,10 @@ def main():
                 # --- Opción 3: Energía en barras de chocolate o TNT ---
                 elif opcion == 3:
                     while True:
-                        print("---------ENERGÍA EN BARRAS DE CHOCOLATE Y TNT---------")
+                        print("\n" + "=" * 70)
+                        print("ENERGÍA EN BARRAS DE CHOCOLATE Y TNT")
+                        print("=" * 70)
+                        print(calc_creativas.escenario_aleatorio("ENERGIA"))
                         print("A cuántas barras o unidades de TNT equivale:")
                         energia = calc_creativas.pedir_valor()
                         while energia is None:
@@ -222,7 +239,9 @@ def main():
                         while unidad is None:
                             unidad = calc_creativas.pedir_unidad(unidades)
         
+                        print("=" * 70)
                         calc_creativas.energia_en_barras(energia, unidad)
+                        print("=" * 70)
         
                         repetir = input("¿Desea hacer otra conversión de energía? (s/n): ").lower()
                         if repetir != "s":
@@ -231,18 +250,23 @@ def main():
                 # --- Opción 4: Volumen a propiedades de un agujero negro ---
                 elif opcion == 4:
                     while True:
-                        print("-------VOLUMEN A PROPIEDADES DE UN AGUJERO NEGRO-------")
+                        print("\n" + "=" * 70)
+                        print("VOLUMEN A PROPIEDADES DE UN AGUJERO NEGRO")
+                        print("=" * 70)
+                        print(calc_creativas.escenario_aleatorio("AGUJERO"))
                         print("Un agujero negro de volumen:")
                         volumen = calc_creativas.pedir_valor()
                         while volumen is None:
-                            volumen = pedir_valor()
+                            volumen = calc_creativas.pedir_valor()
         
                         unidades = ['km', 'm', 'cm', 'mm', 'in', 'ft', 'yd', 'mi', 'l', 'gal']
                         unidad = calc_creativas.pedir_unidad(unidades)
                         while unidad is None:
                             unidad = calc_creativas.pedir_unidad(unidades)
         
+                        print("=" * 70)
                         calc_creativas.vol_agujero_negro(volumen, unidad)
+                        print("=" * 70)
         
                         repetir = input("¿Desea hacer otra conversión de volumen? (s/n): ").lower()
                         if repetir != "s":
@@ -251,7 +275,10 @@ def main():
                 # --- Opción 5: Distancia en equivalentes de animales marinos ---
                 elif opcion == 5:
                     while True:
-                        print("--------DISTANCIA EQUIVALENTE EN ANIMALES MARINOS-------")
+                        print("\n" + "=" * 70)
+                        print("DISTANCIA EQUIVALENTE EN ANIMALES MARINOS")
+                        print("=" * 70)
+                        print(calc_creativas.escenario_aleatorio("DISTANCIA"))
                         print("La distancia es equivalente a:")
                         distancia = calc_creativas.pedir_valor()
                         while distancia is None:
@@ -262,7 +289,9 @@ def main():
                         while unidad is None:
                             unidad = calc_creativas.pedir_unidad(unidades)
         
+                        print("=" * 70)
                         calc_creativas.distancia_marina(distancia, unidad)
+                        print("=" * 70)
         
                         repetir = input("¿Desea hacer otra conversión de distancia? (s/n): ").lower()
                         if repetir != "s":
@@ -270,21 +299,29 @@ def main():
         
                 # --- Opción 6: Pruebas rápidas ---
                 elif opcion == 6:
-                    print("----PRUEBAS DE LAS FUNCIONES CON VALORES POR DEFAULT----")
-                    op = calc_creativas.pedir_valor()
-                    while op is None:
-                        op = calc_creativas.pedir_valor()
-        
-                    calc_creativas.pruebas(op)
+                    print("\n" + "=" * 70)
+                    print("MÓDULO DE PRUEBAS INTERACTIVO")
+                    print("=" * 70)
+                    print("Funciones:")
+                    print("1. Altura en torres de libros")
+                    print("2. Peso en gatos y gatitos")
+                    print("3. Energía en barras de chocolate")
+                    print("4. Volumen de agujero negro")
+                    print("5. Distancia en animales marinos")
+                    print("=" * 70)
+                    calc_creativas.pruebas()
+                    continue  # Regresa al menú principal
         
                 # --- Opción 7: Salir ---
                 elif opcion == 7:
+                    print("\n" + "=" * 70)
                     print("Saliendo del módulo de conversiones creativas...")
                     break
         
                 # --- Entrada no válida ---
                 else:
                     print("Opción no válida. Intente de nuevo.")
+                    
         elif opcion == 5:
             print("Saliendo del programa. ¡Hasta luego!")
             break
