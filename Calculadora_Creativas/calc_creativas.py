@@ -1,4 +1,5 @@
 import math
+import random
 
 # Constantes físicas
 GRAVEDAD = 6.6674 * 10**-11   # Constante de gravitación universal (N·m²/kg²)
@@ -15,6 +16,7 @@ def menu():
     print("5. Distancia en animales marinos")
     print("6. Pruebas con valores estándar")
     print("7. Salir")
+    print("=" * 70)
 
 
 def altura_libros(altura, unidad):
@@ -49,11 +51,11 @@ def altura_libros(altura, unidad):
 
     # Número de libros equivalentes
     quijote = int(cem // 8)
-    res = cem % 8
-    principito = int(res // 1)
+    principito = int(cem // 1)
 
     print("La torre de libros tendría:")
     print(quijote, " Libros del Quijote de la Mancha")
+    print("Y...")
     print(principito, " Libros del Principito")
 
 
@@ -85,11 +87,11 @@ def peso_gatitos(peso, unidad):
         return
 
     gatos = int(kilo // 4)
-    res = kilo % 4
-    gatitos = int(res // 1.5)
+    gatitos = int(kilo // 1.5)
 
     print("Por ese peso tendrías:")
     print(gatos, " Gatos adultos de 4 kg")
+    print("Y...")
     print(gatitos, " Gatitos de 1.5 kg")
 
 
@@ -130,6 +132,7 @@ def energia_en_barras(energia, unidad):
     print(f"{ferrero:.2f}", " piezas de Ferrero Rocher")
     print(f"{hersheys:.2f}", " barras de Hershey's")
     print(f"{carlos:.2f}", " barritas de Carlos V")
+    print("Y...")
     print(f"{ton_tnt:.2f}", " toneladas de TNT")
 
 
@@ -235,22 +238,101 @@ def pruebas(op):
     """
     Ejecuta pruebas rápidas con valores predefinidos
     para verificar el funcionamiento de las funciones principales.
-
-    Parámetros:
-        op (int): número de la opción de prueba.
     """
-    if op == 1:
-        print(altura_libros(2.3, 'm'))  # Torre de libros para 2.3 m
-    elif op == 2:
-        print(peso_gatitos(87755, 'g'))  # Peso de 87,755 g en gatos/gatitos
-    elif op == 3:
-        print(energia_en_barras(2000, 'kWh'))  # Energía de 2000 kWh en equivalencias
-    elif op == 4:
-        print(vol_agujero_negro(1, 'km'))  # Agujero negro de volumen 1 km³
-    elif op == 5:
-        distancia_marina(47.271, 'm')  # Distancia de 47.271 m en animales marinos
+        while True:
+        print("Tu opción es...")
+        op = pedir_valor()
+        while op is None:
+            op = pedir_valor()
+        if op == 1:
+            altura = 2.3
+            unidad = 'm'
+            print("FUNCIÓN: altura_libros(altura, unidad)")
+            print(f"Parámetros: altura = {altura} {unidad}")
+            esperado = f"Equivalente a una torre de aproximadamente {int((altura * 100) // 8)} libros del Quijote o {int((altura * 100) // 1)} libros del Principito."
+            print(f"Resultado esperado: {esperado}\n")
+            print(f"Y tú has obtenido:")
+            altura_libros(altura, unidad)
+            print("=" * 70)
+
+        elif op == 2:
+            peso = 87755
+            unidad = 'g'
+            print("FUNCIÓN: peso_gatitos(peso, unidad)")
+            print(f"Parámetros: peso = {peso} {unidad}")
+            esperado = f"Equivalente a aproximadamente {int((peso * 0.001) // 4)} gatos adultos o {int((peso * 0.001) // 1.5)} gatitos."
+            print(f"Resultado esperado: {esperado}\n")
+            print(f"Y tú has obtenido:")
+            peso_gatitos(peso, unidad)
+            print("=" * 70)
+
+        elif op == 3:
+            energia = 2000
+            unidad = 'kWh'
+            print("FUNCIÓN: energia_en_barras(energia, unidad)")
+            print(f"Parámetros: energía = {energia} {unidad}")
+            esperado = "Equivalente a miles de barras de chocolate o unas pocas toneladas de TNT."
+            print(f"Resultado esperado: {esperado}\n")
+            print(f"Y tú has obtenido:")
+            energia_en_barras(energia, unidad)
+            print("=" * 70)
+
+        elif op == 4:
+            volumen = 1
+            unidad = 'km'
+            print("FUNCIÓN: vol_agujero_negro(volumen, unidad)")
+            print(f"Parámetros: volumen = {volumen} {unidad}³")
+            esperado = "Debería mostrar un radio y una masa extremadamente grandes, representando un agujero negro teórico."
+            print(f"Resultado esperado: {esperado}\n")
+            print(f"Y tú has obtenido:")
+            vol_agujero_negro(volumen, unidad)
+            print("=" * 70)
+
+        elif op == 5:
+            distancia = 47.271
+            unidad = 'm'
+            print("FUNCIÓN: distancia_marina(distancia, unidad)")
+            print(f"Parámetros: distancia = {distancia} {unidad}")
+            esperado = "Equivalente a una combinación de longitudes de animales marinos, desde ballenas hasta caballitos de mar."
+            print(f"Resultado esperado: {esperado}\n")
+            print(f"Y tú has obtenido:")
+            distancia_marina(distancia, unidad)
+            print("=" * 70)
+
+        else:
+            print("Opción no válida. Intenta de nuevo")
+            continue
+
+        repetir = input("¿Desea hacer otra consulta? (s/n):").lower()
+        if repetir != "s":
+            return None
+
+def escenario_aleatorio(categoria):
+    """
+    Lee el archivo 'escenarios.txt' y devuelve un escenario aleatorio de la categoría solicitada.
+    Categorías: 'ALTURA', 'PESO', 'ENERGIA', 'AGUJERO', 'DISTANCIA'
+    """
+    bloques = {}
+    try:
+        with open("escenarios.txt", "r", encoding="utf-8") as f:
+            key = None
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if line.startswith("[") and line.endswith("]"):
+                    key = line[1:-1].upper()
+                    bloques[key] = []
+                elif key:
+                    bloques[key].append(line)
+    except FileNotFoundError:
+        print("El archivo 'escenarios.txt' no se encontró.")
+        return None
+
+    if categoria.upper() in bloques:
+        return random.choice(bloques[categoria.upper()])
     else:
-        print("No se pudo realizar la consulta. Intenta de nuevo")
+        return None
 
 def pedir_valor():
     """
@@ -275,10 +357,12 @@ def pedir_unidad(unidades):
         str: la unidad seleccionada si es válida.
         None: si no se reconoce la unidad.
     """
-    print("Unidades: ", unidades)
-    unidad = str(input("Ingresa una unidad: "))
-    if unidad in unidades:
+    print("Unidades disponibles:", ", ".join(unidades))
+    unidad = input("Ingresa una unidad: ").strip().lower()
+
+    # Convertimos la lista de unidades a minúsculas para comparar
+    unidades_minusculas = [u.lower() for u in unidades]
+    if unidad in unidades_minusculas:
         return unidad
-    else:
-        print("Unidad no reconocida")
-        return None
+    print("Unidad no reconocida...")
+    return None
